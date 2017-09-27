@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+
+    <!--Style sheets-->
+    <link rel="stylesheet" href="./styles/appStyles.css">
+
+    <!--Scripts-->    
+    <script>window.$ = window.jQuery = require('jquery');</script>
+    <script src="./scripts/appScripts.js"></script>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <title>
+      Project Orbital
+    </title>
+
+  </head>
+  <body>
+    <h1>Welcome to orbital</h1>
+    <!-- All of the Node.js APIs are available in this renderer process. -->
+    We are using Node.js <script>document.write(process.versions.node)</script>,
+    Chromium <script>document.write(process.versions.chrome)</script>,
+    and Electron <script>document.write(process.versions.electron)</script>.
+  </body>
+
+  <script>
+    // You can also require other files to run in this process
+    require('./renderer.js')
+  </script>
+</html>
