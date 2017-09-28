@@ -1,26 +1,23 @@
 {
-  "name": "electron-quick-start",
+  "name": "ProjectOrbital",
   "version": "1.0.0",
-  "description": "A minimal Electron application",
+  "description": "",
   "main": "main.js",
   "scripts": {
     "start": "electron ."
   },
-  "repository": "https://github.com/electron/electron-quick-start",
+  "repository": "",
   "keywords": [
-    "Electron",
-    "quick",
-    "start",
-    "tutorial",
-    "demo"
+    "Electron"
   ],
-  "author": "GitHub",
-  "license": "CC0-1.0",
+  "author": "RM Terrell",
+  "license": "",
   "devDependencies": {
     "electron": "~1.6.2"
   },
   "dependencies": {
     "bootstrap": "^3.3.7",
+    "font-awesome": "^4.7.0",
     "jquery": "^3.2.1"
   }
 }
