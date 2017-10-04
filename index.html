@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!------------------------------------------------------------------------------------------------------>
   <link rel="stylesheet" href="./styles/appStyles.css">
+  <link rel="stylesheet" href="./styles/calcStyle.css">
   <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
   <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap-theme.min.css">
   <link rel="stylesheet" href="./node_modules/font-awesome/css/font-awesome.min.css">
@@ -38,44 +39,42 @@
           <a href="#"><i class="fa fa-calculator fa-lg"></i> Calculators <span class="arrow"></span></a>
         </li>
         <ul class="sub-menu collapse" id="calcs">
-          <li>Standard</li>
+          <li><a href="#" onclick="loadStandCalc()">Standard</a></li>
           <li>Scientific</li>
         </ul>
         <li data-toggle="collapse" data-target="#prod" class="collapsed">
           <a href="#"><i class="fa fa-exchange fa-lg"></i> Productivity Tools <span class="arrow"></span></a>
         </li>
         <ul class="sub-menu collapse" id="prod">
-          <li>Pomodoro</li>
+          <li><a href="#" onclick="loadPomo()">Pomodoro</a></li>
           <li>Production Recorder</li>
         </ul>
       </ul>
     </div>
   </div>
-  <div class="container" id="main">
+  <div id="mainContent">
     <div class="row">
       <div class="col-md-12">
         <h4>Main</h4>
       </div>
     </div>
   </div>
-
-
-
-  <!------------------------------------------------------------------------------------------------------>
-  <script>
-    if (typeof module === 'object') {
-      //var electron = require('electron');
-      window.module = module;
-      module = undefined;
-    }
-  </script>
-  <script src="./node_modules/jquery/dist/jquery.min.js"></script>
-  <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-  <script src="./scripts/appScripts.js"></script>
-  <script>
-    if (window.module) module = window.module;
-  </script>
-  <!------------------------------------------------------------------------------------------------------>
 </body>
 
 </html>
+
+<!------------------------------------------------------------------------------------------------------>
+<script>
+  if (typeof module === 'object') {
+    //var electron = require('electron');
+    window.module = module;
+    module = undefined;
+  }
+</script>
+<script src="./node_modules/jquery/dist/jquery.min.js"></script>
+<script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="./scripts/appScripts.js"></script>
+<script>
+  if (window.module) module = window.module;
+</script>
+<!------------------------------------------------------------------------------------------------------>

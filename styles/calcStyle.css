@@ -1,43 +1,3 @@
-  <div id="calcBody">
-    <div class="calculator">
-    <div class="calcInput" id="input"></div>
-    <div class="buttons">
-      <div class="operators">
-        <div>+</div>
-        <div>-</div>
-        <div>&times;</div>
-        <div>&divide;</div>
-      </div>
-      <div class="leftPanel">
-        <div class="numbers">
-          <div>7</div>
-          <div>8</div>
-          <div>9</div>
-        </div>
-        <div class="numbers">
-          <div>4</div>
-          <div>5</div>
-          <div>6</div>
-        </div>
-        <div class="numbers">
-          <div>1</div>
-          <div>2</div>
-          <div>3</div>
-        </div>
-        <div class="numbers">
-          <div>0</div>
-          <div>.</div>
-          <div id="clear">C</div>
-        </div>
-      </div>
-      <div class="equal" id="result">=</div>
-    </div>
-  </div>
-  <div class="history">
-  </div>
-</div>
-
-<style>
 #calcBody {
   width: 500px;
   margin: 4% auto;
@@ -212,4 +172,4 @@ div.equal:active {
   font-weight: 300;
   src: local('Source Sans Pro Light'), local('SourceSansPro-Light'), url(https://fonts.gstatic.com/s/sourcesanspro/v10/toadOcfmlt9b38dHJxOBGOode0-EuMkY--TSyExeINg.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
-}</style>
+}
