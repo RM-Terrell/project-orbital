@@ -1,7 +1,8 @@
-function loadStandCalc() {
-     document.getElementById("mainContent").innerHTML='<object type="text/html" data="./views/standardCalc.html" ></object>';
-}
-
-function loadPomo() {
-     document.getElementById("mainContent").innerHTML='<object type="text/html" data="./views/pomodoro.html" ></object>';
-}
+$(document).ready(function() {
+  $("#standardCalcBtn").click(function() {
+    $("#mainContent").load("./views/standardCalc.html");
+  });
+  $("#pomodoroBtn").click(function(){
+    $("#mainContent").load("./views/pomodoro.html");
+  });
+});

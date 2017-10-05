@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, shrink-to-fit=no">
   <!------------------------------------------------------------------------------------------------------>
   <link rel="stylesheet" href="./styles/appStyles.css">
+  <link rel="stylesheet" href="./styles/calcStyles.css">
   <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
   <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap-theme.min.css">
   <link rel="stylesheet" href="./node_modules/font-awesome/css/font-awesome.min.css">
@@ -38,14 +39,14 @@
           <a href="#"><i class="fa fa-calculator fa-lg"></i> Calculators <span class="arrow"></span></a>
         </li>
         <ul class="sub-menu collapse" id="calcs">
-          <li><a href="#" onclick="loadStandCalc()">Standard</a></li>
+          <li><a href="#" id="standardCalcBtn">Standard</a></li>
           <li>Scientific</li>
         </ul>
         <li data-toggle="collapse" data-target="#prod" class="collapsed">
           <a href="#"><i class="fa fa-exchange fa-lg"></i> Productivity Tools <span class="arrow"></span></a>
         </li>
         <ul class="sub-menu collapse" id="prod">
-          <li><a href="#" onclick="loadPomo()">Pomodoro</a></li>
+          <li><a href="#" id="pomodoroBtn">Pomodoro</a></li>
           <li>Production Recorder</li>
         </ul>
       </ul>
