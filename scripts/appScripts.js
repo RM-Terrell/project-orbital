@@ -5,4 +5,7 @@ $(document).ready(function() {
   $("#pomodoroBtn").click(function(){
     $("#mainContent").load("./views/pomodoro.html");
   });
+  $("#indivDataBtn").click(function(){
+    $("#mainContent").load("./views/indivData.html");
+  });
 });
