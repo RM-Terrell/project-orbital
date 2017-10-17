@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, shrink-to-fit=no">
   <!------------------------------------------------------------------------------------------------------>
   <link rel="stylesheet" href="./styles/appStyles.css">
-  <link rel="stylesheet" href="./styles/calcStyles.css">
+
   <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
   <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap-theme.min.css">
   <link rel="stylesheet" href="./node_modules/font-awesome/css/font-awesome.min.css">
@@ -30,16 +30,17 @@
           <a href="#"><i class="fa fa-superscript fa-lg"></i> Stats Tools <span class="arrow"></span></a>
         </li>
         <ul class="sub-menu collapse" id="stats">
-          <li class="active"><a href="#">Confidence Interval Conversion</a></li>
-          <li><a href="#">Stand Error Conversion</a></li>
-          <li><a href="#">N Value as Percents</a></li>
+          <li class="active"><a href="#" id="ciToSdBTN">Confidence Interval Conversion</a></li>
+          <li><a href="#" id="semToSdBTN">Stand Error Conversion</a></li>
+          <li><a href="#" id="nToPercBTN">N Value as Percents</a></li>
+          <li><a href="#" id="percToPercBTN">Percent to Percent</a></li>
           <li><a href="#" id="indivDataBtn">Individual Data Handling</a></li>
         </ul>
         <li data-toggle="collapse" data-target="#calcs" class="collapsed">
           <a href="#"><i class="fa fa-calculator fa-lg"></i> Calculators <span class="arrow"></span></a>
         </li>
         <ul class="sub-menu collapse" id="calcs">
-          <li><a href="#" id="standardCalcBtn">Standard</a></li>
+          <li><a href="#">Standard</a></li>
           <li>Scientific</li>
         </ul>
         <li data-toggle="collapse" data-target="#prod" class="collapsed">
@@ -69,10 +70,13 @@
 </script>
 <script src="./node_modules/jquery/dist/jquery.min.js"></script>
 <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="./scripts/statsConversions.js"></script>
 <script src="./scripts/appScripts.js"></script>
-<script src="./scripts/indivDataScripts.js"></script>
 
 <script>
   if (window.module) module = window.module;
 </script>
+
+
+
 <!------------------------------------------------------------------------------------------------------>

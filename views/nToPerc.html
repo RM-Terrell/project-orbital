@@ -1,0 +1,43 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-7">
+      <form name=nToPercent method="post">
+
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title" id="tableTitle">Convert N to Percent of Whole</h3>
+            <input type="reset" id="tableTitle" value="Reset" class="btn-warning">
+          </div>
+          <div class="panel-body">
+            <div class="table-responsive">
+              <table class="table table-bordered table-hover">
+                <thead>
+                  <tr>
+                    <th>Total Sample N Input</th>
+                    <th>Reported N Input</th>
+                    <th>Reported N Percent is</th>
+                    <th>Other Percent is</th>
+                  </tr>
+                </thead>
+                <tr>
+                  <td>
+                    <input data-bind="value: totalN" data-val="true" type="text" />
+                  </td>
+                  <td>
+                    <input data-bind="value: reportedN" data-val="true" type="text" />
+                  </td>
+                  <td>
+                    <input data-bind="value: reportedPercResult" data-val="true" type="text" class="result" />
+                  </td>
+                  <td>
+                    <input data-bind="value: assumedPercResult" data-val="true" type="text" class="result" />
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

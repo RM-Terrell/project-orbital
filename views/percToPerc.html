@@ -1,0 +1,33 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-5">
+      <form class="percToPerc">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title" id="tableTitle">Find Other Percent Out of 100</h3>
+            <input type="reset" id="tableTitle" value="Reset" class="btn-warning">
+          </div>
+          <div class="panel-body">
+            <div class="table-responsive">
+              <table class="table table-bordered table-hover">
+                <thead>
+                  <tr>
+                    <th>Given Percent</th>
+                    <th>Other Percent Out of 100 is</th>
+                  </tr>
+                </thead>
+                <tr>
+                  <td>
+                    <input data-bind="value: givenPerc" data-val="true" type="text" />
+                  </td>
+                  <td>
+                    <input data-bind="value: percResult" data-val="true" type="text" class="result" />
+                  </td>
+              </table>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
