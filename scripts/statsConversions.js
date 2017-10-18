@@ -1,5 +1,3 @@
-
-
 $(document).keypress(function(e) {
     if(e.which == 13) {
       ci();
@@ -32,22 +30,24 @@ function se() {
   document.form2.d.value = Math.round(this.d * 100) / 100;
 }
 
-function ci() {
-  this.u = parseFloat(document.getElementById("ciUpperValue").value);
-  this.l = parseFloat(document.getElementById("ciLowerValue").value);
-  this.n = parseFloat(document.getElementById("ciNValue").value);
-  this.CIv = parseFloat(document.getElementById("ciSelect").value);
+function ci(upperBound, lowerBound, nValue, ciValue) {
+  upperBound = parseFloat(document.getElementById("ciUpperValue").value);
+  lowerBound = parseFloat(document.getElementById("ciLowerValue").value);
+  nValue = parseFloat(document.getElementById("ciNValue").value);
+  ciValue = parseFloat(document.getElementById("ciSelect").value);
 
-  if (this.CIv == 90) {
-    this.CIv = 1.645;
-  } else if (this.CIv == 95) {
-    this.CIv = 1.96;
-  } else if (this.CIv == 98) {
-    this.CIv = 2.33;
-  } else if (this.CIv == 99) {
-    this.CIv = 2.575;
+  var sdResult = 0;
+
+  if (ciValue == 90) {
+    ciValue = 1.645;
+  } else if (ciValue == 95) {
+    ciValue = 1.96;
+  } else if (ciValue == 98) {
+    ciValue = 2.33;
+  } else if (ciValue == 99) {
+    ciValue = 2.575;
   }
 
-  this.d = ((this.u - this.l) * Math.sqrt(this.n) / (2 * this.CIv));
-  document.getElementById("sdResult").value = Math.round(this.d * 100) / 100;
+  sdResult = ((upperBound - lowerBound) * Math.sqrt(nValue) / (2 * ciValue));
+  document.getElementById("sdResult").value = Math.round(sdResult * 100) / 100;
 }
