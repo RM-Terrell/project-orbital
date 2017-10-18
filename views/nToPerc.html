@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-lg-7">
-      <form name=nToPercent method="post">
+    <div class="col-lg-12">
+      <form name=nToPerc method="post">
         <div class="panel panel-primary">
           <div class="panel-heading">
             <h3 class="panel-title" id="tableTitle">Convert N to Percent of Whole</h3>
@@ -20,16 +20,16 @@
                 </thead>
                 <tr>
                   <td>
-                    <input  type="text" /> <!--TODO id all these fields-->
+                    <input id="totalN" type="text" />
                   </td>
                   <td>
-                    <input  type="text" />
+                    <input id="givenN" type="text" />
                   </td>
                   <td>
-                    <input  type="text" class="result" />
+                    <input id="givenPercResult" type="text" class="result" />
                   </td>
                   <td>
-                    <input  type="text" class="result" />
+                    <input id="otherPercResult" type="text" class="result" />
                   </td>
                 </tr>
               </table>

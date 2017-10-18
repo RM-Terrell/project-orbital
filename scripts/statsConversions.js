@@ -1,16 +1,24 @@
 $(document).keypress(function(e) { //TODO move this logic into appScript//
   if (e.which == 13) {
     var formName = formIdentifier();
-    alert(formName);
+    //alert(formName); //uncomment to test form identification
     switch (formName) {
+
       case "ciCalc":
-        ci();
+        ciToSd();
         break;
 
       case "percToPerc":
         percToPerc();
         break;
 
+      case "nToPerc":
+        nToPerc();
+        break;
+
+      case "semToSd":
+        semToSd();
+        break;
     }
   }
 });
@@ -20,33 +28,35 @@ function formIdentifier() {
   return identity;
 }
 
+function semToSd(sem, nValue) {
+  sem = parseFloat(document.getElementById("semInput").value);
+  nValue = parseFloat(document.getElementById("nValueInput").value);
+  var sdResult = Math.round(Math.sqrt(nValue)) * (sem * 100) / 100;
 
-function perc1() {
-  a = document.form1.a.value;
-  b = document.form1.b.value;
-  document.form1.total1.value = Math.round((b / a) * 100 * 100) / 100;
-}
-
-function perc1a() {
-  a = document.form1.a.value;
-  b = document.form1.b.value;
-  document.form1.total2.value = Math.round(((a - b) / a) * 100 * 100) / 100;
+  document.getElementById("sdFromSEMResult").value = sdResult;
 }
 
 function percToPerc(input) {
-  input = document.getElementById("percToPercInput").value;
+  input = parseFloat(document.getElementById("percToPercInput").value);
   var result = 100 - input;
+
   document.getElementById("percToPercResult").value = result;
 }
 
-function se() {
-  this.e = document.form2.e.value;
-  this.n = document.form2.n.value;
-  this.d = Math.sqrt(n) * e;
-  document.form2.d.value = Math.round(this.d * 100) / 100;
+function nToPerc(givenN, totalN){
+
+  givenN = parseFloat(document.getElementById("givenN").value);
+  totalN = parseFloat(document.getElementById("totalN").value);
+
+  var givenNPerc = givenN / totalN * 100;
+  var otherPerc = totalN - givenN / totalN * 100;
+
+  document.getElementById("givenPercResult").value = givenNPerc;
+  document.getElementById("otherPercResult").value = otherPerc;
 }
 
-function ci(upperBound, lowerBound, nValue, ciValue) {
+
+function ciToSd(upperBound, lowerBound, nValue, ciValue) {
   upperBound = parseFloat(document.getElementById("ciUpperValue").value);
   lowerBound = parseFloat(document.getElementById("ciLowerValue").value);
   nValue = parseFloat(document.getElementById("ciNValue").value);
@@ -65,5 +75,6 @@ function ci(upperBound, lowerBound, nValue, ciValue) {
   }
 
   sdResult = ((upperBound - lowerBound) * Math.sqrt(nValue) / (2 * ciValue));
+
   document.getElementById("sdResult").value = Math.round(sdResult * 100) / 100;
 }
