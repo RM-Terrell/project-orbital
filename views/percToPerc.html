@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-lg-5">
-      <form class="percToPerc">
+      <form name="percToPerc">
         <div class="panel panel-primary">
           <div class="panel-heading">
             <h3 class="panel-title" id="tableTitle">Find Other Percent Out of 100</h3>
@@ -18,10 +18,10 @@
                 </thead>
                 <tr>
                   <td>
-                    <input data-bind="value: givenPerc" data-val="true" type="text" />
+                    <input id="percToPercInput" type="text" />
                   </td>
                   <td>
-                    <input data-bind="value: percResult" data-val="true" type="text" class="result" />
+                    <input id="percToPercResult" type="text" class="result" />
                   </td>
               </table>
             </div>

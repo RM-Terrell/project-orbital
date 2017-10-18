@@ -1,8 +1,24 @@
-$(document).keypress(function(e) {
-    if(e.which == 13) {
-      ci();
+$(document).keypress(function(e) { //TODO move this logic into appScript//
+  if (e.which == 13) {
+    var formName = formIdentifier();
+    alert(formName);
+    switch (formName) {
+      case "ciCalc":
+        ci();
+        break;
+
+      case "percToPerc":
+        percToPerc();
+        break;
+
     }
+  }
 });
+
+function formIdentifier() {
+  var identity = document.getElementsByTagName("form")[0].getAttribute("name");
+  return identity;
+}
 
 
 function perc1() {
@@ -17,10 +33,10 @@ function perc1a() {
   document.form1.total2.value = Math.round(((a - b) / a) * 100 * 100) / 100;
 }
 
-function perc2() {
-  this.c = document.form1.c.value;
-  this.d = 100 - this.c;
-  document.form1.total3.value = this.d;
+function percToPerc(input) {
+  input = document.getElementById("percToPercInput").value;
+  var result = 100 - input;
+  document.getElementById("percToPercResult").value = result;
 }
 
 function se() {
