@@ -1,28 +1,3 @@
-$(document).keypress(function(e) { //TODO move this logic into appScript//
-  if (e.which == 13) {
-    var formName = formIdentifier();
-    //alert(formName); //uncomment to test form identification
-    switch (formName) {
-
-      case "ciCalc":
-        ciToSd();
-        break;
-
-      case "percToPerc":
-        percToPerc();
-        break;
-
-      case "nToPerc":
-        nToPerc();
-        break;
-
-      case "semToSd":
-        semToSd();
-        break;
-    }
-  }
-});
-
 function formIdentifier() {
   var identity = document.getElementsByTagName("form")[0].getAttribute("name");
   return identity;
