@@ -3,39 +3,39 @@ function formIdentifier() {
   return identity;
 }
 
-function semToSd(sem, nValue) {
-  sem = parseFloat(document.getElementById("semInput").value);
-  nValue = parseFloat(document.getElementById("nValueInput").value);
-  var sdResult = Math.round(Math.sqrt(nValue)) * (sem * 100) / 100;
+function semToSd() {
+  this.sem = parseFloat(document.getElementById("semInput").value);
+  this.nValue = parseFloat(document.getElementById("nValueInput").value);
+  this.sdResult = Math.round(Math.sqrt(nValue)) * (sem * 100) / 100;
 
   document.getElementById("sdFromSEMResult").value = sdResult;
 }
 
-function percToPerc(input) {
-  input = parseFloat(document.getElementById("percToPercInput").value);
-  var result = 100 - input;
+function percToPerc() {
+  this.input = parseFloat(document.getElementById("percToPercInput").value);
+  this.result = 100 - input;
 
   document.getElementById("percToPercResult").value = result;
 }
 
-function nToPerc(givenN, totalN){
+function nToPerc(){
 
-  givenN = parseFloat(document.getElementById("givenN").value);
-  totalN = parseFloat(document.getElementById("totalN").value);
+  this.givenN = parseFloat(document.getElementById("givenN").value);
+  this.totalN = parseFloat(document.getElementById("totalN").value);
 
-  var givenNPerc = givenN / totalN * 100;
-  var otherPerc = totalN - givenN / totalN * 100;
+  this.givenNPerc = givenN / totalN * 100;
+  this.otherPerc = totalN - givenN / totalN * 100;
 
   document.getElementById("givenPercResult").value = givenNPerc;
   document.getElementById("otherPercResult").value = otherPerc;
 }
 
 
-function ciToSd(upperBound, lowerBound, nValue, ciValue) {
-  upperBound = parseFloat(document.getElementById("ciUpperValue").value);
-  lowerBound = parseFloat(document.getElementById("ciLowerValue").value);
-  nValue = parseFloat(document.getElementById("ciNValue").value);
-  ciValue = parseFloat(document.getElementById("ciSelect").value);
+function ciToSd() {
+  this.upperBound = parseFloat(document.getElementById("ciUpperValue").value);
+  this.lowerBound = parseFloat(document.getElementById("ciLowerValue").value);
+  this.nValue = parseFloat(document.getElementById("ciNValue").value);
+  this.ciValue = parseFloat(document.getElementById("ciSelect").value);
 
   var sdResult = 0;
 
@@ -49,7 +49,7 @@ function ciToSd(upperBound, lowerBound, nValue, ciValue) {
     ciValue = 2.575;
   }
 
-  sdResult = ((upperBound - lowerBound) * Math.sqrt(nValue) / (2 * ciValue));
+  this.sdResult = ((upperBound - lowerBound) * Math.sqrt(nValue) / (2 * ciValue));
 
   document.getElementById("sdResult").value = Math.round(sdResult * 100) / 100;
 }
