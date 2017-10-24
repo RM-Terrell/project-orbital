@@ -12,10 +12,7 @@ html {
     height: 100%;
 }
 
-#mainContent{
-  height: 100%;
-  position: relative;
-}
+
 
 html, body {
   margin:0;
