@@ -5,28 +5,32 @@ function formIdentifier() {
 function semToSd() {
     var sem = parseFloat(document.getElementById("semInput").value);
     var nValue = parseFloat(document.getElementById("nValueInput").value);
-    this.sdResult = Math.round(Math.sqrt(nValue)) * (sem * 100) / 100;
-    document.getElementById("sdFromSEMResult").value = sdResult;
+    var sdResult = Math.round(Math.sqrt(nValue)) * (sem * 100) / 100;
+    var resultField = document.getElementById("sdFromSEMResult");
+    resultField.value = sdResult.toString();
 }
 function percToPerc() {
     var input = parseFloat(document.getElementById("percToPercInput").value);
-    this.result = 100 - input;
-    document.getElementById("percToPercResult").value = result;
+    var result = 100 - input;
+    var resultField = document.getElementById("percToPercResult");
+    resultField.value = result.toString();
 }
 function nToPerc() {
-    this.givenN = parseFloat(document.getElementById("givenN").value);
-    this.totalN = parseFloat(document.getElementById("totalN").value);
-    this.givenNPerc = givenN / totalN * 100;
-    this.otherPerc = totalN - givenN / totalN * 100;
-    document.getElementById("givenPercResult").value = givenNPerc;
-    document.getElementById("otherPercResult").value = otherPerc;
+    var givenN = parseFloat(document.getElementById("givenN").value);
+    var totalN = parseFloat(document.getElementById("totalN").value);
+    var givenNPerc = givenN / totalN * 100;
+    var otherPerc = totalN - givenN / totalN * 100;
+    var givenPercResultField = document.getElementById("givenPercResult");
+    var otherPercResultField = document.getElementById("otherPercResult");
+    givenPercResultField.value = givenNPerc.toString();
+    otherPercResultField.value = otherPerc.toString();
 }
 function ciToSd() {
-    this.upperBound = parseFloat(document.getElementById("ciUpperValue").value);
-    this.lowerBound = parseFloat(document.getElementById("ciLowerValue").value);
-    this.nValue = parseFloat(document.getElementById("ciNValue").value);
-    this.ciValue = parseFloat(document.getElementById("ciSelect").value);
-    var sdResult = 0;
+    var upperBound = parseFloat(document.getElementById("ciUpperValue").value);
+    var lowerBound = parseFloat(document.getElementById("ciLowerValue").value);
+    var nValue = parseFloat(document.getElementById("ciNValue").value);
+    var ciValue = parseFloat(document.getElementById("ciSelect").value);
+    var sdResultField = document.getElementById("sdResult");
     if (ciValue == 90) {
         ciValue = 1.645;
     }
@@ -39,6 +43,6 @@ function ciToSd() {
     else if (ciValue == 99) {
         ciValue = 2.575;
     }
-    this.sdResult = ((upperBound - lowerBound) * Math.sqrt(nValue) / (2 * ciValue));
-    document.getElementById("sdResult").value = Math.round(sdResult * 100) / 100;
+    var sdResult = ((upperBound - lowerBound) * Math.sqrt(nValue) / (2 * ciValue));
+    sdResultField.value = (Math.round(sdResult * 100) / 100).toString();
 }
