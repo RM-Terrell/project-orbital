@@ -46,6 +46,11 @@ $(document).keypress(function(e) {
       case "semToSd":
         semToSd();
         break;
+
+      case "indivCalcTable":
+        calculateMSD();
+        break;
+
       default:
         break;
     }
