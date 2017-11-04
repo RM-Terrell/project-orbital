@@ -32,19 +32,19 @@ $(document).keypress(function(e) {
     switch (formName) {
 
       case "ciCalc":
-        ciToSd();
+        ciToSD();
         break;
 
       case "percToPerc":
-        percToPerc();
+        percentToPercent();
         break;
 
       case "nToPerc":
-        nToPerc();
+        nToPercent();
         break;
 
       case "semToSd":
-        semToSd();
+        semToSD();
         break;
 
       case "indivCalcTable":

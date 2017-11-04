@@ -3,7 +3,7 @@ function formIdentifier() {
   return identity;
 }
 
-function semToSd() {
+function semToSD() {
   let sem: number =
     parseFloat((<HTMLInputElement>document.getElementById("semInput")).value);
   let nValue: number =
@@ -17,7 +17,7 @@ function semToSd() {
   resultField.value = sdResult.toString();
 }
 
-function percToPerc() {
+function percentToPercent() {
   let input: number =
     parseFloat((<HTMLInputElement>document.getElementById("percToPercInput")).value);
   let result: number = 100 - input;
@@ -28,7 +28,7 @@ function percToPerc() {
   resultField.value = result.toString();
 }
 
-function nToPerc(){
+function nToPercent(){
 
   let givenN: number =
     parseFloat((<HTMLInputElement>document.getElementById("givenN")).value);
@@ -49,7 +49,7 @@ function nToPerc(){
 }
 
 
-function ciToSd() {
+function ciToSD() {
   let upperBound: number =
     parseFloat((<HTMLInputElement>document.getElementById("ciUpperValue")).value);
   let lowerBound: number =

@@ -7,11 +7,9 @@ function deleteRow(row) {
 
         document.getElementById('InputTable').deleteRow(rowCount - 1);
     }
-
  }
 
 //Row insertion
-
 function insRow() {
   var x = document.getElementById('InputTable');
   // copy the targeted row
@@ -30,9 +28,7 @@ function insRow() {
 
   // append the new row to the table
   AppendTarget.appendChild(new_row);
-} /*Origin of source material for row addition
- and deletion function "http://stackoverflow.com/questions/6473111/add-delete-table-rows-dynamically-using-javascript" */
-
+}
 
 function calculateMSD() {
 
@@ -67,5 +63,4 @@ function calculateMSD() {
 
   var totalSD = Math.sqrt(SqrDiffSum / (rowCount - 1));
   $("#totalSD").val(totalSD.toFixed(2));
-
 }

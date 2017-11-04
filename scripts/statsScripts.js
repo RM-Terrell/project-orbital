@@ -2,20 +2,20 @@ function formIdentifier() {
     var identity = document.getElementsByTagName("form")[0].getAttribute("name");
     return identity;
 }
-function semToSd() {
+function semToSD() {
     var sem = parseFloat(document.getElementById("semInput").value);
     var nValue = parseFloat(document.getElementById("nValueInput").value);
     var sdResult = Math.round(Math.sqrt(nValue)) * (sem * 100) / 100;
     var resultField = document.getElementById("sdFromSEMResult");
     resultField.value = sdResult.toString();
 }
-function percToPerc() {
+function percentToPercent() {
     var input = parseFloat(document.getElementById("percToPercInput").value);
     var result = 100 - input;
     var resultField = document.getElementById("percToPercResult");
     resultField.value = result.toString();
 }
-function nToPerc() {
+function nToPercent() {
     var givenN = parseFloat(document.getElementById("givenN").value);
     var totalN = parseFloat(document.getElementById("totalN").value);
     var givenNPerc = givenN / totalN * 100;
@@ -25,7 +25,7 @@ function nToPerc() {
     givenPercResultField.value = givenNPerc.toString();
     otherPercResultField.value = otherPerc.toString();
 }
-function ciToSd() {
+function ciToSD() {
     var upperBound = parseFloat(document.getElementById("ciUpperValue").value);
     var lowerBound = parseFloat(document.getElementById("ciLowerValue").value);
     var nValue = parseFloat(document.getElementById("ciNValue").value);
