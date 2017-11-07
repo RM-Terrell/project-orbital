@@ -84,7 +84,6 @@ $(document).ready(function() {
       var time = getTimeLeft(deadline);
       minutesSpan.innerHTML = ("0" + time.minutes).slice(-2);
       secondsSpan.innerHTML = ("0" + time.seconds).slice(-2);
-      $("title").html(("0" + time.minutes).slice(-2) + ":" + ("0" + time.seconds).slice(-2));
 
       if (time.total <= 0) {
         clearInterval(timeInterval);
@@ -128,7 +127,6 @@ $(document).ready(function() {
     $(".start-pomodoro, .break, .session-length").removeClass('hidden');
     $(".reset").addClass('hidden');
     $(".minutes-count").html(pomodoro);
-    $("title").html("Pomodoro")
     clearInterval(timeInterval);
     minutesSpan.innerHTML = ("0" + pomodoro).slice(-2);
     secondsSpan.innerHTML = "00";
