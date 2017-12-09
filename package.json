@@ -4,7 +4,8 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+     "package": "electron-packager ./ Project Orbital --Windows --out Build --version 5.3.0 --overwrite"
   },
   "repository": "",
   "keywords": [
@@ -13,7 +14,8 @@
   "author": "RM Terrell",
   "license": "",
   "devDependencies": {
-    "electron": "~1.6.2"
+    "electron": "~1.6.2",
+    "electron-packager": "^10.1.0"
   },
   "dependencies": {
     "bootstrap": "^3.3.7",
