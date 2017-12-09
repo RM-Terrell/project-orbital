@@ -1,0 +1,62 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6">
+      <form name=indivCalcTable method="post" id="DynamicM"> <!--TODO why the id also?-->
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title" id="tableTitle"> Individual Data Input</h3>
+            <input type="reset" value="Reset" class="btn-warning">
+            <input type="button" class="btn-danger" value="Delete" onclick="deleteRow(this)" />
+            <input type="button" class="btn-info" value="Add" onclick="insRow()" />
+          </div>
+          <div id="InputTablediv">
+            <div class="table-responsive">
+              <table id="InputTable" class="table table-bordered table-hover">
+                <tbody id="AppendTarget">
+                  <tr>
+                    <td><b>Patient Number</b></td>
+                    <td><b>Value</b></td>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td><input class="PatientV" name=iz /></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="col-md-6">
+      <form name=form5 method="post" id="MSD">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title" id="tableTitle">Mean SD Results</h3>
+            <input type="reset" id="tableTitle" value="Reset" class="btn-warning">
+            <input onclick=calculateMSD() type=button id="tableTitle" class="btn-success" value="Calculate">
+          </div>
+          <div id="OverMSD">
+            <div class="table-responsive">
+              <table id="SDRaw" class="table table-bordered table-hover">
+                <tbody>
+                  <tr>
+                    <td><b>Overall Mean</b></td>
+                    <td><b>Overall Standard Deviation</b></td>
+                  </tr>
+                  <tr>
+                    <td><input id="totalMean" type="text" class="result" /></td>
+                    <td><input id="totalSD" class="result" /></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="./scripts/indivDataScripts.js"></script>
