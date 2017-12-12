@@ -1,0 +1,55 @@
+<form name=ciCalc method="post">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title" id="tableTitle">Convert CI to SD </h3>
+            <input onclick=ciToSD() type=button class="btn-success" value="Calculate">
+            <input type="reset" value="Reset" class="btn-warning">
+          </div>
+          <div class="panel-body">
+            <div id="Conv">
+              <div class="table-responsive">
+                <table class="table table-bordered table-hover">
+                  <thead>
+                    <tr>
+                      <th>Upper Bound</th>
+                      <th>Lower Bound</th>
+                      <th>CI %</th>
+                      <th>N Value</th>
+                      <th>SD Output</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <input type="text" id="ciUpperValue">
+                      </td>
+                      <td>
+                        <input type="text" id="ciLowerValue">
+                      </td>
+                      <td>
+                        <select id="ciSelect">
+                          <option value="1.645">90</option>
+                          <option value="1.96" selected>95</option>
+                          <option value="2.33">98</option>
+                          <option value="2.57">99</option>
+                        </select>
+                      </td>
+                      <td>
+                        <input type="text" id="ciNValue"><br />
+                      </td>
+                      <td>
+                        <input type="number" class="result" id="sdResult">
+                      </td>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

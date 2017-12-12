@@ -1,9 +1,9 @@
-function formIdentifier() {
-  var identity = document.getElementsByTagName("form")[0].getAttribute("name");
+function formIdentifier(): string {
+  var identity: string = document.getElementsByTagName("form")[0].getAttribute("name");
   return identity;
 }
 
-function semToSD() {
+function semToSD(): void {
   let sem: number =
     parseFloat((<HTMLInputElement>document.getElementById("semInput")).value);
   let nValue: number =
@@ -17,7 +17,7 @@ function semToSD() {
   resultField.value = sdResult.toString();
 }
 
-function percentToPercent() {
+function percentToPercent():void {
   let input: number =
     parseFloat((<HTMLInputElement>document.getElementById("percToPercInput")).value);
   let result: number = 100 - input;
@@ -28,7 +28,7 @@ function percentToPercent() {
   resultField.value = result.toString();
 }
 
-function nToPercent(){
+function nToPercent(): void {
 
   let givenN: number =
     parseFloat((<HTMLInputElement>document.getElementById("givenN")).value);
@@ -49,7 +49,7 @@ function nToPercent(){
 }
 
 
-function ciToSD() {
+function ciToSD(): void {
   let upperBound: number =
     parseFloat((<HTMLInputElement>document.getElementById("ciUpperValue")).value);
   let lowerBound: number =
@@ -62,13 +62,13 @@ function ciToSD() {
   let sdResultField: HTMLInputElement =
     <HTMLInputElement>document.getElementById("sdResult");
 
-  if (ciValue == 90) {
+  if (ciValue === 90) {
     ciValue = 1.645;
-  } else if (ciValue == 95) {
+  } else if (ciValue === 95) {
     ciValue = 1.96;
-  } else if (ciValue == 98) {
+  } else if (ciValue === 98) {
     ciValue = 2.33;
-  } else if (ciValue == 99) {
+  } else if (ciValue === 99) {
     ciValue = 2.575;
   }
 

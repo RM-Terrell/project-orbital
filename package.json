@@ -5,7 +5,7 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "package": "electron-packager ./ Orbital --Windows --out Builds --version 5.3.0 --overwrite"
+    "package": "electron-packager ./ ProjectOrbital --Windows --out Builds --version 5.3.0 --overwrite"
   },
   "repository": "",
   "keywords": [
