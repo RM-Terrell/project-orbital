@@ -87,9 +87,15 @@ $(document).ready(function() {
 
       if (time.total <= 0) {
         clearInterval(timeInterval);
-        if (i === 0) {
-          startBreak();
+        if (i === 0) {          
+          new Notification('Session complete!', {
+            body: 'Take a well earned break.',
+          });
+          startBreak();s
         } else if (i === 1) {
+          new Notification('Break time is up!', {
+            body: 'Lets get back to it.',
+          });
           startPomodoro();
         }
       }
