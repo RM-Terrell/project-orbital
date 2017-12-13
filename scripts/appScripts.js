@@ -23,6 +23,9 @@ $(document).ready(function() {
   $("#semToSdBTN").click(function() {
     $("#mainContent").load("./views/semToSd.html");
   });
+  $("#prodRecorder").click(function() {
+    $("#mainContent").load("./views/prodRecorder.html");
+  });
 });
 
 $(document).keypress(function(e) {

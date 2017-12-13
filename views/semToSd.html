@@ -1,42 +1,42 @@
-  <!--SEM to SD-->
-  <div class="container-fluid">
-    <div class="row">
-      <form name=semToSd method="post">
-        <div class="col-md-12">
-          <div class="panel panel-primary">
-            <div class="panel-heading">
-              <h3 class="panel-title" id="tableTitle">Convert SEM to SD</h3>
-              <input onclick=semToSD() type=button class="btn-success" value="Calculate">
-              <input type="reset" value="Reset" class="btn-warning">
-            </div>
-            <div class="panel-body">
-              <div class="table-responsive">
-                <table class="table table-bordered table-hover">
-                  <thead>
-                    <tr>
-                      <th>SEM Value</th>
-                      <th>N Value</th>
-                      <th>SD Output</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>
-                        <input id="semInput" type="text" />
-                      </td>
-                      <td>
-                        <input id="nValueInput" type="text" />
-                      </td>
-                      <td>
-                        <input id="sdFromSEMResult" class="result" type="number" />
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+<!--SEM to SD-->
+<div class="container-fluid">
+  <div class="row">
+    <form name=semToSd method="post">
+      <div class="col-md-12">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title" id="tableTitle">Convert SEM to SD</h3>
+            <input onclick=semToSD() type=button class="btn-success" value="Calculate">
+            <input type="reset" value="Reset" class="btn-warning">
+          </div>
+          <div class="panel-body">
+            <div class="table-responsive">
+              <table class="table table-bordered table-hover">
+                <thead>
+                  <tr>
+                    <th>SEM Value</th>
+                    <th>N Value</th>
+                    <th>SD Output</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <input id="semInput" type="text" />
+                    </td>
+                    <td>
+                      <input id="nValueInput" type="text" />
+                    </td>
+                    <td>
+                      <input id="sdFromSEMResult" class="result" type="number" />
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
-      </form>
-    </div>
+      </div>
+    </form>
   </div>
+</div>

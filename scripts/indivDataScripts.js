@@ -2,12 +2,12 @@
 
 function deleteRow(row) {
 
-    var rowCount = $('#InputTable tr').length;
-    if (rowCount > 2) {
+  var rowCount = $('#InputTable tr').length;
+  if (rowCount > 2) {
 
-        document.getElementById('InputTable').deleteRow(rowCount - 1);
-    }
- }
+    document.getElementById('InputTable').deleteRow(rowCount - 1);
+  }
+}
 
 //Row insertion
 function insRow() {
@@ -32,11 +32,11 @@ function insRow() {
 
 function calculateMSD() {
 
-//------------------------------- Mean Calculations--------------------------------------//
+  //------------------------------- Mean Calculations--------------------------------------//
   var sum = 0;
   var rowCount = $('#InputTable tr').length;
   //iterate through each textboxes and add the values
-  $(".PatientV").each(function() {
+  $(".PatientV").each(function () {
 
     //add only if the value is number
     if (!isNaN(this.value) && this.value.length != 0) {
@@ -48,16 +48,16 @@ function calculateMSD() {
 
   $("#totalMean").val(totalMean.toFixed(2));
 
-//--------------------------------- SD Calculations---------------------------------//
+  //--------------------------------- SD Calculations---------------------------------//
 
   var SqrDiffSum = 0;
 
   $(".PatientV").each(function () {
 
-      //add only if the value is number
-      if (!isNaN(this.value) && this.value.length != 0) {
-          SqrDiffSum += Math.pow((parseFloat(this.value) - totalMean), 2);
-      }
+    //add only if the value is number
+    if (!isNaN(this.value) && this.value.length != 0) {
+      SqrDiffSum += Math.pow((parseFloat(this.value) - totalMean), 2);
+    }
 
   });
 

@@ -17,7 +17,7 @@ function semToSD(): void {
   resultField.value = sdResult.toString();
 }
 
-function percentToPercent():void {
+function percentToPercent(): void {
   let input: number =
     parseFloat((<HTMLInputElement>document.getElementById("percToPercInput")).value);
   let result: number = 100 - input;
