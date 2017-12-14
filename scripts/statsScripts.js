@@ -19,7 +19,7 @@ function nToPercent() {
     var givenN = parseFloat(document.getElementById("givenN").value);
     var totalN = parseFloat(document.getElementById("totalN").value);
     var givenNPerc = givenN / totalN * 100;
-    var otherPerc = totalN - givenN / totalN * 100;
+    var otherPerc = 100 - givenNPerc;
     var givenPercResultField = document.getElementById("givenPercResult");
     var otherPercResultField = document.getElementById("otherPercResult");
     givenPercResultField.value = givenNPerc.toString();
@@ -31,16 +31,16 @@ function ciToSD() {
     var nValue = parseFloat(document.getElementById("ciNValue").value);
     var ciValue = parseFloat(document.getElementById("ciSelect").value);
     var sdResultField = document.getElementById("sdResult");
-    if (ciValue == 90) {
+    if (ciValue === 90) {
         ciValue = 1.645;
     }
-    else if (ciValue == 95) {
+    else if (ciValue === 95) {
         ciValue = 1.96;
     }
-    else if (ciValue == 98) {
+    else if (ciValue === 98) {
         ciValue = 2.33;
     }
-    else if (ciValue == 99) {
+    else if (ciValue === 99) {
         ciValue = 2.575;
     }
     var sdResult = ((upperBound - lowerBound) * Math.sqrt(nValue) / (2 * ciValue));

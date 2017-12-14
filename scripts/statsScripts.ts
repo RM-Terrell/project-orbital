@@ -36,7 +36,7 @@ function nToPercent(): void {
     parseFloat((<HTMLInputElement>document.getElementById("totalN")).value);
 
   let givenNPerc: number = givenN / totalN * 100;
-  let otherPerc: number = totalN - givenN / totalN * 100;
+  let otherPerc: number = 100 - givenNPerc;
 
   let givenPercResultField: HTMLInputElement =
     <HTMLInputElement>document.getElementById("givenPercResult");
@@ -47,7 +47,6 @@ function nToPercent(): void {
   givenPercResultField.value = givenNPerc.toString();
   otherPercResultField.value = otherPerc.toString();
 }
-
 
 function ciToSD(): void {
   let upperBound: number =
