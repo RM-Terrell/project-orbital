@@ -1,6 +1,6 @@
 "use-strict";
 
-$(document).ready(function() {
+$(document).ready(function () {
 
   var pomodoro = 25;
   var currentTime = Date.parse(new Date());
@@ -18,20 +18,20 @@ $(document).ready(function() {
   secondsSpan.innerHTML = "00";
 
 
-  $(".start-pomodoro").click(function() {
+  $(".start-pomodoro").click(function () {
     startPomodoro();
   });
 
-  $(".break").click(function() {
+  $(".break").click(function () {
     startBreak();
   });
 
-  $(".reset").click(function() {
+  $(".reset").click(function () {
     resetClock();
   });
 
 
-  $("#pomodoro-plus-btn").click(function() {
+  $("#pomodoro-plus-btn").click(function () {
     pomodoro++;
     if (pomodoro > 60) {
       pomodoro = 60;
@@ -41,7 +41,7 @@ $(document).ready(function() {
     minutesSpan.innerHTML = ("0" + pomodoro).slice(-2);
   });
 
-  $("#pomodoro-minus-btn").click(function() {
+  $("#pomodoro-minus-btn").click(function () {
     pomodoro--;
     if (pomodoro < 1) {
       pomodoro = 1;
@@ -51,7 +51,7 @@ $(document).ready(function() {
   });
 
 
-  $("#break-plus-btn").click(function() {
+  $("#break-plus-btn").click(function () {
     breakTime++;
     if (breakTime > 15) {
       breakTime = 15;
@@ -59,7 +59,7 @@ $(document).ready(function() {
     $(".break-minutes-count").html(breakTime);
   });
 
-  $("#break-minus-btn").click(function() {
+  $("#break-minus-btn").click(function () {
     breakTime--;
     if (breakTime < 1) {
       breakTime = 1;
@@ -80,18 +80,19 @@ $(document).ready(function() {
   }
 
   function startClock() {
-    timeInterval = setInterval(function() {
+    timeInterval = setInterval(function () {
       var time = getTimeLeft(deadline);
       minutesSpan.innerHTML = ("0" + time.minutes).slice(-2);
       secondsSpan.innerHTML = ("0" + time.seconds).slice(-2);
 
       if (time.total <= 0) {
         clearInterval(timeInterval);
-        if (i === 0) {          
+        if (i === 0) {
           new Notification('Session complete!', {
             body: 'Take a well earned break.',
           });
-          startBreak();s
+          startBreak();
+          s
         } else if (i === 1) {
           new Notification('Break time is up!', {
             body: 'Lets get back to it.',

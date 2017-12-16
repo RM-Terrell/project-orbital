@@ -1,0 +1,31 @@
+<input type="button" id="btn-createfile" value="create save file" />
+
+<script>
+    // Filesystem module
+    const fs = require("fs");
+    //Dialogs module
+    const {
+        dialog
+    } = require("electron").remote;
+
+    document.getElementById("btn-createfile").addEventListener("click", () => {
+
+        let content = "Testing content";
+
+        dialog.showSaveDialog((filename) => {
+            if (filename === undefined) {
+                console.log("No file saved");
+                return;
+            }
+
+            fs.writeFile(filename, content, (err) => {
+                if (err) {
+                    alert("Error during file creation " + err.message);
+                    return;
+                }
+
+                alert("File saved !");
+            })
+        });
+    }, false);
+</script>

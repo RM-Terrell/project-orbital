@@ -1,7 +1,8 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-6">
-      <form name=indivCalcTable method="post" id="DynamicM"> <!--TODO why the id also?-->
+      <form name=indivCalcTable method="post" id="DynamicM">
+        <!--TODO why the id also?-->
         <div class="panel panel-primary">
           <div class="panel-heading">
             <h3 class="panel-title" id="tableTitle"> Individual Data Input</h3>
@@ -14,12 +15,18 @@
               <table id="InputTable" class="table table-bordered table-hover">
                 <tbody id="AppendTarget">
                   <tr>
-                    <td><b>Patient Number</b></td>
-                    <td><b>Value</b></td>
+                    <td>
+                      <b>Patient Number</b>
+                    </td>
+                    <td>
+                      <b>Value</b>
+                    </td>
                   </tr>
                   <tr>
                     <td>1</td>
-                    <td><input class="PatientV" name=iz /></td>
+                    <td>
+                      <input class="PatientV" name=iz />
+                    </td>
                   </tr>
                 </tbody>
               </table>
@@ -42,12 +49,20 @@
               <table id="SDRaw" class="table table-bordered table-hover">
                 <tbody>
                   <tr>
-                    <td><b>Overall Mean</b></td>
-                    <td><b>Overall Standard Deviation</b></td>
+                    <td>
+                      <b>Overall Mean</b>
+                    </td>
+                    <td>
+                      <b>Overall Standard Deviation</b>
+                    </td>
                   </tr>
                   <tr>
-                    <td><input id="totalMean" type="text" class="result" /></td>
-                    <td><input id="totalSD" class="result" /></td>
+                    <td>
+                      <input id="totalMean" type="text" class="result" />
+                    </td>
+                    <td>
+                      <input id="totalSD" class="result" />
+                    </td>
                   </tr>
                 </tbody>
               </table>

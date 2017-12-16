@@ -16,7 +16,6 @@
                   <tr>
                     <th>SEM Value</th>
                     <th>N Value</th>
-                    <th>SD Output</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -27,16 +26,26 @@
                     <td>
                       <input id="nValueInput" type="text" />
                     </td>
-                    <td>
-                      <input id="sdFromSEMResult" class="result" type="number" />
-                    </td>
+                    <div class="table-responsive">
+                      <table class="table table-bordered table-hover">
+                        <thead>
+                          <tr>
+                            <th>SD Output</th>
+                          </tr>
+                        </thead>
+                        <tr>
+                          <td>
+                            <input id="sdFromSEMResult" class="result" type="number" />
+                          </td>
+                        </tr>
+                      </table>
                   </tr>
                 </tbody>
               </table>
+              </div>
             </div>
           </div>
         </div>
-      </div>
     </form>
+    </div>
   </div>
-</div>
