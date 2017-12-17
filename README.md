@@ -6,8 +6,13 @@ Orbital is a pet project of mine meant to ease typical day to day math and chick
 ## Framework
 Orbital is built in the Electron framework using Bootstrap, jQuery, and TypeScript. As such it **should** be fully cross platform compatible with MacOS, Windows, and Linux.
 
+## Up and Coming
+-Scientific calculator.
+-Decimal place selection for stats conversions.
+-Being able to keep the Pomodoro timer running while using the rest of the app.
+
 ## To Use
-No installer or executable yet. Still working on that. Will update when available. For now to run the project, download the repo, then use "npm install" to install dependencies followed by "npm start" to launch.
+The "Builds" folder contains a Windows build of the app with a .exe in it that can be ran without the "npm start" command. Version 1.0 release will see a full Release page created with proper download links.
 
 ## License
 Totally open. Go nuts.
