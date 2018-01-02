@@ -35,7 +35,7 @@ function nToPercent(): void {
   let totalN: number =
     parseFloat((<HTMLInputElement>document.getElementById("totalN")).value);
 
-  let givenNPerc: number = givenN / totalN * 100;
+  let givenNPerc: number = Math.round(1000*(givenN / totalN * 100))/1000;
   let otherPerc: number = 100 - givenNPerc;
 
   let givenPercResultField: HTMLInputElement =
