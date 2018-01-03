@@ -12,7 +12,7 @@ Orbital is built in the Electron framework using Bootstrap, jQuery, and TypeScri
 - Being able to keep the Pomodoro timer running while using the rest of the app.
 
 ## To Use
-The "Builds" folder contains a Windows build of the app with a .exe in it that can be ran without the "npm start" command. Version 1.0 release will see a full Release page created with proper download links.
+Currently there is an issue when trying to download the built version of the app and run on windows. Use "npm start" until I wack-a-mole this issue.
 
 ## License
 Totally open. Go nuts.
