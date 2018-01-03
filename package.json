@@ -15,7 +15,7 @@
   "license": "",
   "devDependencies": {
     "electron": "~1.6.2",
-    "electron-packager": "^10.1.0"
+    "electron-packager": "^10.1.1"
   },
   "dependencies": {
     "bootstrap": "^3.3.7",
