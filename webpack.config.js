@@ -1,6 +1,7 @@
 var path = require('path');
 var webpack = require('webpack');
 var BundleTracker = require('webpack-bundle-tracker');
+var ExtractText = require('extract-text-webpack-plugin');
 
 module.exports = {
   entry:  path.join(__dirname, 'assets/src/js/index'),
@@ -15,12 +16,19 @@ module.exports = {
         loader: 'babel-loader',
         exclude: /node_modules/,
       },
+      {
+        test: /\.css$/,
+        loader: ['style-loader', 'css-loader'],
+      },
     ],
   },
   plugins: [
     new BundleTracker({
       path: __dirname,
       filename: 'webpack-stats.json'
+    }),
+    new ExtractText({
+      filename: '[name]-[hash].css'
     }),
   ],
 }

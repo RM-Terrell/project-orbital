@@ -1,3 +1,5 @@
 node_modules
 assets/dist
 webpack-stats.json
+django_orbital/db.sqlite3
+*.pyc
