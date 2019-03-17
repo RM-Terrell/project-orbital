@@ -13,7 +13,7 @@ will see a screen like this.
 At the bottom you can see a checkbox about adding Python to path. Do that. More info on PATH setup including how
 to do it on Unix/Linux systems found [here](https://www.tutorialspoint.com/python/python_environment.htm)
 
-This project also utilizes Node.js and the NPM network. You can get Node.js (whcih include NPM)
+This project also utilizes Node.js and the NPM network. You can get Node.js (which include NPM)
 from [here](https://nodejs.org/en/).
 
 After cloning the repo and installing the above mentioned software, run the following install commands from inside the project directory (project-orbital):
@@ -42,3 +42,8 @@ To start the Django server, navigate inside the `django_orbital` directory and r
 > python manage.py runserver
 
 and this will start the Django server.
+
+Because the npm and django commands need to run in two different directories (the main project dir and django_orbital)
+it will probably be helpful to have two separate terminals up when developing. In vscode with both commands on run mode it looks like this:
+
+![terms](/docs/images/terms.png)
