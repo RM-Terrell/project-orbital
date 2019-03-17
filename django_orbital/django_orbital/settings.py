@@ -70,7 +70,7 @@ TEMPLATES = [
 ]
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'assets'),
+    os.path.join(BASE_DIR, '../assets'),
 )
 
 WSGI_APPLICATION = 'django_orbital.wsgi.application'

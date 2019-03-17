@@ -1,4 +1,6 @@
-# Post Clone Installs
+# Project Orbital Startup Guide
+
+## Post Clone Installs
 
 First and foremost this project runs on Django which utilizes Python 3.7.2. Install python by downloading it from
 [here](https://www.python.org/downloads/release/python-372/). Preferably download the 64 bit version though
@@ -22,10 +24,18 @@ and
 
 > npm install
 
-# Startup Commands
+## Startup Commands
 
-To get webpack running and compiling JS and CSS files run the following command:
+To get webpack running and compiling JS and CSS files run the following command from inside the main project directory:
 
+> npm run start
+
+This will build all the JS and CSS files as they are currently coded. To have webpack build the files constantly
+as you modify them run:
+
+> npm run watch
+
+and it will rebuild on save. With the JS and CSS files built you can run the Django server to properly start the website.
 
 To start the Django server, navigate inside the `django_orbital` directory and run the following command:
 

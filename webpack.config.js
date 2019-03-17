@@ -18,6 +18,7 @@ module.exports = {
       filename: '[name]-[hash].css'
     }),
   ],
+  mode: 'development',
   module: {
     rules: [
       {
