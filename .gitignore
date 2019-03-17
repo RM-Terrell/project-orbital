@@ -3,3 +3,4 @@ assets/dist
 webpack-stats.json
 django_orbital/db.sqlite3
 *.pyc
+.vscode/settings.json
