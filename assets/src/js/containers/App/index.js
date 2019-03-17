@@ -11,8 +11,8 @@ class App extends Component {
       <Router>
         <div>
           <h2>Welcome to Project Orbital</h2>
-          <nav className="navbar navbar-expand-lg navbar-light bg-light">
-          <ul className="navbar-nav mr-auto">
+          <nav className="navbar">
+          <ul className="navbar-nav">
             <li><Link to={'/'} className="nav-link"> Home </Link></li>
             <li><Link to={'/calculator'} className="nav-link">Calculator</Link></li>
           </ul>
