@@ -10,7 +10,7 @@ class App extends Component {
     const text = 'Project Orbital';
     return (
       <Router>
-        <body>
+        <div>
           <nav className="navbar">
             <div className="logo">Welcome to Project Orbital</div>
             <ul className="navbar-nav">
@@ -24,7 +24,7 @@ class App extends Component {
               <Route path='/calculator' component={Calculator} />
               <Route path='/pomodoro' component={Pomodoro} />
           </Switch>
-        </body>
+        </div>
       </Router>
     )
   }
