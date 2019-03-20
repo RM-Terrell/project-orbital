@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import Title from '../../components/Title';
 import Home from '../../components/Home'
 import Calculator from '../../components/Calculator'
+import Pomodoro from '../../components/Pomodoro'
 
 class App extends Component {
   render () {
@@ -13,20 +14,21 @@ class App extends Component {
     //  src -> components add Pomodoro directory and index.js with export.
     return (
       <Router>
-        <div>
-          <h2>Welcome to Project Orbital</h2>
+        <body>
           <nav className="navbar">
-          <ul className="navbar-nav">
-            <li><Link to={'/'} className="nav-link"> Home </Link></li>
-            <li><Link to={'/calculator'} className="nav-link">Calculator</Link></li>
-          </ul>
+            <div className="logo">Welcome to Project Orbital</div>
+            <ul className="navbar-nav">
+              <li><Link to={'/'} className="nav-link"> Home </Link></li>
+              <li><Link to={'/calculator'} className="nav-link"> Calculator </Link></li>
+              <li><Link to={'/pomodoro'} className="nav-link"> Pomodoro </Link></li>
+            </ul>
           </nav>
-          <hr />
           <Switch>
               <Route exact path='/' component={Home} />
               <Route path='/calculator' component={Calculator} />
+              <Route path='/pomodoro' component={Pomodoro} />
           </Switch>
-        </div>
+        </body>
       </Router>
     )
   }
