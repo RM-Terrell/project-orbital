@@ -7,6 +7,10 @@ import Calculator from '../../components/Calculator'
 class App extends Component {
   render () {
     const text = 'Project Orbital';
+    /* TODO make the navbar not so damn ugly */
+    // add a new route for Pomodoro Timer, import (line 6), ul element (line 19ish)
+    // add a new Switch Route (line 26ish)
+    //  src -> components add Pomodoro directory and index.js with export.
     return (
       <Router>
         <div>
