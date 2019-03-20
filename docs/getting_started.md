@@ -37,11 +37,17 @@ as you modify them run:
 
 and it will rebuild on save. With the JS and CSS files built you can run the Django server to properly start the website.
 
-To start the Django server, navigate inside the `django_orbital` directory and run the following command:
+To start the Django server, navigate inside the `django_orbital` directory, then apply all migrations with the following command:
+
+> python manage.py migrate
+
+and the start the server with this command:
 
 > python manage.py runserver
 
-and this will start the Django server.
+To either stop the Django server, or stop the NPM watch script, use the console command:
+
+> crtl + c
 
 Because the npm and django commands need to run in two different directories (the main project dir and django_orbital)
 it will probably be helpful to have two separate terminals up when developing. In vscode with both commands on run mode it looks like this:
