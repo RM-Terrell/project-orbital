@@ -1,3 +1,61 @@
-.title {
-    color: red;
+
+$font-family: "Open Sans", sans-serif;
+$font-size: 1em;
+
+$nav-background-color: #222;
+$nav-foreground-color: #fff;
+$nav-hover-color: #444;
+
+body, html {
+  margin: 0;
+  font: $font-size $font-family;
+}
+
+.content {
+  padding: 30px;
+}
+
+.navbar {
+  width: 100%;
+  background-color: $nav-background-color;
+  height: 70px;
+  color: $nav-foreground-color;
+
+  .logo {
+    float: left;
+    height: 40px;
+    padding: 15px 30px;
+    font-size: 1.4em;
+    line-height: 40px;
   }
+
+  > ul {
+    @extend %plainlist;
+    float: left;
+
+    > li {
+      float: left;
+    }
+  }
+}
+
+.nav-link {
+  display: inline-block;
+  padding: 15px 20px;
+  height: 40px;
+  line-height: 40px;
+  color: $nav-foreground-color;
+  text-decoration: none;
+
+  &:hover {
+    background-color: $nav-hover-color;
+  }
+}
+
+
+
+%plainlist {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
