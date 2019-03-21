@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import Title from '../../components/Title';
-import Home from '../../components/Home'
-import Calculator from '../../components/Calculator'
-import Pomodoro from '../../components/Pomodoro'
+import Home from '../../components/Home';
+import Calculator from '../../components/Calculator';
+import Pomodoro from '../../components/Pomodoro';
 
 class App extends Component {
-  render () {
+  render() {
     const text = 'Project Orbital';
     return (
       <Router>
@@ -20,13 +20,13 @@ class App extends Component {
             </ul>
           </nav>
           <Switch>
-              <Route exact path='/' component={Home} />
-              <Route path='/calculator' component={Calculator} />
-              <Route path='/pomodoro' component={Pomodoro} />
+            <Route exact path={'/'} component={Home} />
+            <Route path={'/calculator'} component={Calculator} />
+            <Route path={'/pomodoro'} component={Pomodoro} />
           </Switch>
         </div>
       </Router>
-    )
+    );
   }
 }
 export default App;

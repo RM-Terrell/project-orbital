@@ -1,8 +1,8 @@
 {
   "name": "project-orbital",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Productivity and task tracking app",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "./node_modules/.bin/webpack --config webpack.config.js",
@@ -12,7 +12,7 @@
     "type": "git",
     "url": "git+https://github.com/RM-Terrell/project-orbital.git"
   },
-  "author": "",
+  "author": "RM-Terrell",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/RM-Terrell/project-orbital/issues"
@@ -27,6 +27,11 @@
     "@babel/register": "^7.0.0",
     "babel-loader": "^8.0.0-beta.0",
     "css-loader": "^2.1.1",
+    "eslint": "^5.15.3",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.12.4",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "node-sass": "^4.11.0",
     "sass-loader": "^7.1.0",
