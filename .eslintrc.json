@@ -20,6 +20,8 @@
     ],
     "rules": {
         "linebreak-style":"off",
+        "prefer-const":"error",
+        "arrow-body-style":"off",
         "react/prefer-stateless-function": "off",
         "react/jsx-filename-extension": "off",
         "react/jsx-curly-brace-presence": "off"

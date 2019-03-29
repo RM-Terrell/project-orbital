@@ -1,11 +1,11 @@
 import React from 'react';
 
 const Calculator = () => {
-    return (
-      <div>
+  return (
+    <div>
       <h1 className="title">Here is my Calculator!!!!</h1>
-      </div>
-    )
-  }
+    </div>
+  );
+};
 
 export default Calculator;

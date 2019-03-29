@@ -4,7 +4,7 @@
   "description": "Productivity and task tracking app",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "start": "./node_modules/.bin/webpack --config webpack.config.js",
     "watch": "npm run start -- --watch"
   },
@@ -33,6 +33,7 @@
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.12.4",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "jest": "^24.5.0",
     "node-sass": "^4.11.0",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
