@@ -61,6 +61,4 @@ https://github.com/mozilla/geckodriver/releases
 and put on PATH somewhere
 
 PATH set to
-c/Users/paint/Documents/Dev_Projects/project-orbital/
-
-
+c/Users/path_to_project/project-orbital/
