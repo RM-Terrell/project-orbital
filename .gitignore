@@ -4,3 +4,5 @@ webpack-stats.json
 django_orbital/db.sqlite3
 *.pyc
 .vscode/settings.json
+geckodriver.exe
+geckodriver.log

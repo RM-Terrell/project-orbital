@@ -1,4 +1,7 @@
 import time
+import unittest
+import sys
+import os
 
 from selenium_tests.page_objects import base
 from selenium_tests import BaseTest
@@ -15,3 +18,6 @@ class NavBarTests(BaseTest):
         Given that a user navigates to the home url of the site, verify that the Home
         page loads with some content.
         """
+
+if __name__ == '__main__':
+    unittest.main()
