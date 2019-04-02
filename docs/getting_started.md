@@ -53,3 +53,14 @@ Because the npm and django commands need to run in two different directories (th
 it will probably be helpful to have two separate terminals up when developing. In vscode with both commands on run mode it looks like this:
 
 ![terms](/docs/images/terms.png)
+
+## Setting up Selenium Testing
+
+https://github.com/mozilla/geckodriver/releases
+
+and put on PATH somewhere
+
+PATH set to
+c/Users/paint/Documents/Dev_Projects/project-orbital/
+
+
