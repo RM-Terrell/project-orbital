@@ -56,11 +56,24 @@ it will probably be helpful to have two separate terminals up when developing. I
 
 ## Setting up Selenium Testing
 
-To set up selenium testing
+To set up selenium testing youll first need to download the proper gecko driver for firefox which is the primary
+development browser, it can be found [here](https://github.com/mozilla/geckodriver/releases). Its is best to copy the driver into the root of the project so that it will appear on your PYTHONPATH, as the whole project will get added to your machines PYTHONPATH for running the Selenium scripts anyway.
 
-https://github.com/mozilla/geckodriver/releases
+To install all needed python packages the following command can be ran:
 
-and put on PATH somewhere
+> pip install requirements.txt
 
-PATH set to
-c/Users/path_to_project/project-orbital/
+Importantly, the scripts located in the project, and the geckodriver mentioned above need to be seen by your machines PTYONPATH.
+
+### PYTHONPATH FOR WINDOWS
+
+Search PATH in the windows search bar (as of newest Windows 10 build its actually not garbage) and click the "Edit the system environment variables" option that comes up. Click "Environment Variables" in the bottom right. Under "System Variables" pane, add a new one called "PYTHONPATH" and give it a value of path to the project. Forward vs backslash matters.
+
+Example:
+> C:\Users\your_user_name\Documents\project\project-orbital
+
+and this will place both the selenium scripts in the project and the geckodriver onto the PATH.
+
+### PYTHON PATH FOR LINUX / UNIX
+
+Same as windows with setting a variable called "PYTHONPATH" to the path to the project (use `pwd` to get the path easy) but do it via linux things. IDK google it you should be used to that on a linux setup :stuck_out_tongue_winking_eye:. Seriously though using a virtualenv or virtualenv wrapper would be the easiest way to set and unset it as needed.
