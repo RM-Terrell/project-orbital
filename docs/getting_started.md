@@ -56,6 +56,8 @@ it will probably be helpful to have two separate terminals up when developing. I
 
 ## Setting up Selenium Testing
 
+To set up selenium testing
+
 https://github.com/mozilla/geckodriver/releases
 
 and put on PATH somewhere
