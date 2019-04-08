@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class NumberButton extends React.Component {
   render() {
@@ -11,5 +12,9 @@ class NumberButton extends React.Component {
     );
   }
 }
+
+NumberButton.propTypes = {
+  numberValue: PropTypes.number.isRequired,
+};
 
 export default NumberButton;

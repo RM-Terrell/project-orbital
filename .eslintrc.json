@@ -31,7 +31,6 @@
         "react/jsx-filename-extension": "off",
         "react/jsx-curly-brace-presence": "off",
         "react/destructuring-assignment": "off",
-        "react/prop-types": "off",
         "react/jsx-indent": "off",
         "react/jsx-one-expression-per-line": "off"
     }

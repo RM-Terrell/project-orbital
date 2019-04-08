@@ -57,7 +57,7 @@ it will probably be helpful to have two separate terminals up when developing. I
 ## Setting up Selenium Testing
 
 To set up selenium testing youll first need to download the proper gecko driver for firefox which is the primary
-development browser, it can be found [here](https://github.com/mozilla/geckodriver/releases). Its is best to copy the driver into the root of the project so that it will appear on your PYTHONPATH, as the whole project will get added to your machines PYTHONPATH for running the Selenium scripts anyway.
+development browser, it can be found [here](https://github.com/mozilla/geckodriver/releases). Its is best to copy the driver into the `selenium_tests` dir of the project so that it will appear on your PYTHONPATH, as the whole project will get added to your machines PYTHONPATH for running the Selenium scripts anyway.
 
 To install all needed python packages the following command can be ran:
 
