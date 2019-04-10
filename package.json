@@ -18,7 +18,6 @@
     "url": "https://github.com/RM-Terrell/project-orbital/issues"
   },
   "homepage": "https://github.com/RM-Terrell/project-orbital#readme",
-  "browserslist": "> 0.25%, not dead",
   "devDependencies": {
     "@babel/cli": "^7.0.0",
     "@babel/core": "^7.3.4",
