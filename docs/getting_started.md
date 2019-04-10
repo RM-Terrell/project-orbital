@@ -1,5 +1,7 @@
 # Project Orbital Startup Guide
 
+Initial setup inspiration [here](https://medium.com/labcodes/configuring-django-with-react-4c599d1eae63), bunch of npm package versions needed tweaking though.
+
 ## Post Clone Installs
 
 First and foremost this project runs on Django which utilizes Python 3.7.2. Install python by downloading it from
