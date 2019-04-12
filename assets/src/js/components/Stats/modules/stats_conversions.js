@@ -1,3 +1,11 @@
+/**
+ * Converts a confidence interval into standard deviation.
+ * @param {number} upperBound
+ * @param {number} lowerBound
+ * @param {number} nValue
+ * @param {number} ciValuePercent
+ * @returns {number}
+ */
 export function ciToSD(upperBound, lowerBound, nValue, ciValuePercent) {
   let ciMultiplier;
   if (ciValuePercent === 90) {
@@ -15,6 +23,11 @@ export function ciToSD(upperBound, lowerBound, nValue, ciValuePercent) {
   return sdResult;
 }
 
+/**
+ * Calculates standard deviation for many individual points of data
+ * @param {number} valueArray
+ * @returns {object}
+ */
 export function multipointMeanSD(valueArray) {
   let sum = 0;
   let rowCount = valueArray.length;
@@ -36,17 +49,29 @@ export function multipointMeanSD(valueArray) {
 
   const totalSD = Math.sqrt(SqrDiffSum / (rowCount - 1));
 
-  return (totalMean, totalSD);
+  return { totalMean, totalSD };
 }
 
+/**
+ * Converts two n values into their relevant percents. Example:
+ * 3 and 10, first number is 30% of the second.
+ * @param {number} givenN
+ * @param {number} totalN
+ * @returns {object}
+ */
 export function nToPercent(givenN, totalN) {
-  let givenNPerc = Math.round(1000 * (givenN / totalN * 100)) / 1000;
-  let otherPerc = 100 - givenNPerc;
+  const givenNPerc = Math.round(1000 * (givenN / totalN * 100)) / 1000;
+  const otherPerc = 100 - givenNPerc;
 
-  return (givenNPerc, otherPerc);
+  return { givenNPerc, otherPerc };
 }
 
+/**
+ * Converts standard error of the mean to standard deviation
+ * @param {number} sem
+ * @param {numer} nValue
+ * @returns {number}
+ */
 export function semToSD(sem, nValue) {
-  const sdResult = Math.round(Math.sqrt(nValue)) * (sem * 100) / 100;
-  return sdResult;
+  return Math.sqrt(nValue) * sem;
 }
