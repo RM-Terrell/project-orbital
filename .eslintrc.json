@@ -25,6 +25,10 @@
             { "MemberExpression": 1 }
         ],
         "linebreak-style":"off",
+        "max-len":[
+            "error",
+            { "code": 119 }
+        ],
         "prefer-const":"error",
         "arrow-body-style":"off",
         "react/prefer-stateless-function": "off",

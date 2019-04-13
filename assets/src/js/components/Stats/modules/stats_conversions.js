@@ -1,3 +1,4 @@
+// TODO for all, number type checking
 /**
  * Converts a confidence interval into standard deviation.
  * @param {number} upperBound
@@ -53,17 +54,19 @@ export function multipointMeanSD(valueArray) {
 }
 
 /**
- * Converts two n values into their relevant percents. Example:
- * 3 and 10, first number is 30% of the second.
- * @param {number} givenN
- * @param {number} totalN
+ * Converts an n value into its percent value given the total N and
+ * also returns the remaining percent..
+ * Example: 3 and 10, returns 30 and 70 representing the percents.
+ * @param {number} givenN a subset of N
+ * @param {number} totalN total N number
  * @returns {object}
  */
 export function nToPercent(givenN, totalN) {
-  const givenNPerc = Math.round(1000 * (givenN / totalN * 100)) / 1000;
-  const otherPerc = 100 - givenNPerc;
+  // TODO negative number protection
+  const givenPerc = givenN / totalN * 100;
+  const otherPerc = 100 - givenPerc;
 
-  return { givenNPerc, otherPerc };
+  return { givenPerc, otherPerc };
 }
 
 /**
@@ -75,3 +78,6 @@ export function nToPercent(givenN, totalN) {
 export function semToSD(sem, nValue) {
   return Math.sqrt(nValue) * sem;
 }
+
+// TODO function for calculating percents of multiple N values
+// Example: 3, 4, and 3. Returns 30%, 40%, and 30%.

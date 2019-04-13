@@ -1,5 +1,5 @@
 import React from 'react';
-import semToSD from './modules/stats_conversions';
+import { semToSD } from './modules/stats_conversions';
 
 export default class SemToSD extends React.Component {
   render() {
