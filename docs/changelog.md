@@ -1,5 +1,14 @@
 # Orbital Changelog
 
+## April 13 2019
+### Added
+- Stats components
+- Lots of stats tests
+- More eslint rules
+
+### Fixed
+- Function imports in components work now. `{}` are a thing.
+
 ## April 7 2019
 ### Added
 - Calculator app scaffold

@@ -72,7 +72,7 @@ export function nToPercent(givenN, totalN) {
 /**
  * Converts standard error of the mean to standard deviation
  * @param {number} sem
- * @param {numer} nValue
+ * @param {number} nValue
  * @returns {number}
  */
 export function semToSD(sem, nValue) {
