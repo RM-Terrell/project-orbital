@@ -73,10 +73,11 @@ export function nToPercent(givenN, totalN) {
  * Converts standard error of the mean to standard deviation
  * @param {number} sem
  * @param {number} nValue
- * @returns {number}
+ * @returns {number} sdResult
  */
 export function semToSD(sem, nValue) {
-  return Math.sqrt(nValue) * sem;
+  const sdResult = Math.sqrt(nValue) * sem;
+  return sdResult;
 }
 
 // TODO function for calculating percents of multiple N values

@@ -16,8 +16,10 @@ Features (some still in development):
 And more to come.
 
 Technologies leveraged:
-- Django and Python
+- Django
+- Python
 - Selenium
+- Nose2
 - Jest
 - React and React Router
 - Babel
