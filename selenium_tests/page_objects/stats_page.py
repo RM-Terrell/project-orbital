@@ -8,7 +8,7 @@ class StatsPage(Base):
     _home_page_wrapper_selector = 'div#stats-page-wrapper'
 
     @property
-    def home_page_content(self):
+    def stats_page_content(self):
         """
         Returns the stats page object
 

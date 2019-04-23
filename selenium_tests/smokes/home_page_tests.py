@@ -26,7 +26,7 @@ class NavBarTests(BaseTest):
 
         # Check that the page content renders at all, and with some text
         self.assertIsNotNone(home_page_content)
-        self.assertGreater(home_page_content.text, 1)
+        self.assertGreater(len(home_page_content.text), 1)
 
 if __name__ == '__main__':
     unittest.main()

@@ -24,9 +24,9 @@ class StatsPageTests(BaseTest):
         Given that a user navigates to the Stats page, verify that it loads
         with some page content.
         """
-        time.sleep(2)
         self.nav_bar.navigate_to_stats_page()
-        time.sleep(2)
+        stats_page_content = self.stats_page.stats_page_content
+        self.assertGreater(len(stats_page_content.text), 1)
 
 if __name__ == '__main__':
     unittest.main()
