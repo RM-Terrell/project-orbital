@@ -52,3 +52,69 @@ test('N converts to percent, large decimal numbers', () => {
 });
 
 // TODO throw negative and strings at N to Perc converter
+
+test('CI to SD, small round numbers, 90', () => {
+  const upperBound = 10;
+  const lowerBound = 2;
+  const nValue = 20;
+  const ciPercent = 90;
+
+  const expectedSD = 10.874494;
+  expect(ciToSD(upperBound, lowerBound, nValue, ciPercent)).toBeCloseTo(expectedSD);
+});
+
+test('CI to SD, small round numbers, 95', () => {
+  const upperBound = 10;
+  const lowerBound = 2;
+  const nValue = 20;
+  const ciPercent = 95;
+
+  const expectedSD = 9.126808;
+  expect(ciToSD(upperBound, lowerBound, nValue, ciPercent)).toBeCloseTo(expectedSD);
+});
+
+test('CI to SD, small round numbers, 98', () => {
+  const upperBound = 10;
+  const lowerBound = 2;
+  const nValue = 20;
+  const ciPercent = 98;
+
+  const expectedSD = 7.6774;
+  expect(ciToSD(upperBound, lowerBound, nValue, ciPercent)).toBeCloseTo(expectedSD);
+});
+
+test('CI to SD, small round numbers, 99', () => {
+  const upperBound = 10;
+  const lowerBound = 2;
+  const nValue = 20;
+  const ciPercent = 99;
+
+  const expectedSD = 6.94700;
+  expect(ciToSD(upperBound, lowerBound, nValue, ciPercent)).toBeCloseTo(expectedSD);
+});
+
+test('CI to SD, invalid Confidence Interval percent', () => {
+  const upperBound = 10;
+  const lowerBound = 2;
+  const nValue = 20;
+  const ciPercent = 42;
+
+  const expectedError = 'Invalid confidence interval percent.';
+  function testCiThrow() {
+    ciToSD(upperBound, lowerBound, nValue, ciPercent);
+  }
+  expect(testCiThrow).toThrowError(new Error(expectedError));
+});
+
+test('CI to SD, invalid Confidence Interval bound sizes', () => {
+  const upperBound = 2;
+  const lowerBound = 10;
+  const nValue = 20;
+  const ciPercent = 95;
+
+  const expectedError = 'Upper Bound must be larger than the lower.';
+  function testCiThrow() {
+    ciToSD(upperBound, lowerBound, nValue, ciPercent);
+  }
+  expect(testCiThrow).toThrowError(new Error(expectedError));
+});

@@ -11,11 +11,11 @@ class Stats extends Component {
         <h1>Stats</h1>
         <div id="stats-page-wrapper">
           Filler content for stats page
+          <CiToSD />
+          <MultipointMeanSD />
+          <NToPercent />
+          <SemToSD />
         </div>
-        <CiToSD />
-        <MultipointMeanSD />
-        <NToPercent />
-        <SemToSD />
       </div>
     );
   }

@@ -9,17 +9,23 @@
  */
 export function ciToSD(upperBound, lowerBound, nValue, ciValuePercent) {
   let ciMultiplier;
-  if (ciValuePercent === 90) {
-    ciMultiplier = 1.645;
-  } else if (ciValuePercent === 95) {
-    ciMultiplier = 1.96;
-  } else if (ciValuePercent === 98) {
-    ciMultiplier = 2.33;
-  } else if (ciValuePercent === 99) {
-    ciMultiplier = 2.575;
+  // Confidence intervals will always be int's, no need for parsefloat
+  const numberCiPercent = parseInt(ciValuePercent, 10);
+  if (upperBound <= lowerBound) {
+    throw new Error('Upper Bound must be larger than the lower.');
   }
-  let sdResult = ((upperBound - lowerBound) * Math.sqrt(nValue) / (2 * ciMultiplier));
-  sdResult = (Math.round(sdResult * 100) / 100);
+  if (numberCiPercent === 90) {
+    ciMultiplier = 1.645;
+  } else if (numberCiPercent === 95) {
+    ciMultiplier = 1.96;
+  } else if (numberCiPercent === 98) {
+    ciMultiplier = 2.33;
+  } else if (numberCiPercent === 99) {
+    ciMultiplier = 2.575;
+  } else {
+    throw new Error('Invalid confidence interval percent.');
+  }
+  const sdResult = ((upperBound - lowerBound) * Math.sqrt(nValue) / (2 * ciMultiplier));
 
   return sdResult;
 }

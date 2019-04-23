@@ -8,7 +8,7 @@ export default class SemToSD extends React.Component {
   }
 
   handleSubmit() {
-    this.nValue = document.querySelector('input#n-value-input').value;
+    this.nValue = document.querySelector('input#n-value-sem-input').value;
     this.semValue = document.querySelector('input#sem-value-input').value;
     const result = semToSD(this.semValue, this.nValue);
     document.querySelector('output#sd-result-output').value = result;
@@ -17,9 +17,9 @@ export default class SemToSD extends React.Component {
   render() {
     return (
       <div>
-        <input output="number" required="True" placeholder="N Value" id="n-value-input" />
-        <input output="number" required="True" placeholder="SEM Value" id="sem-value-input" />=
-        <output output="number" id="sd-result-output" />
+        <input type="number" required="True" placeholder="N Value" id="n-value-sem-input" />
+        <input type="number" required="True" placeholder="SEM Value" id="sem-value-input" />=
+        <output type="number" id="sd-result-output" />
         <button type="submit" onClick={this.handleSubmit}>SEM to SD</button>
       </div>
     );
