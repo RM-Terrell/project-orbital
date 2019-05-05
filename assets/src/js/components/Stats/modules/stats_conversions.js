@@ -31,30 +31,28 @@ export function ciToSD(upperBound, lowerBound, nValue, ciValuePercent) {
 }
 
 /**
- * Calculates standard deviation for many individual points of data
- * @param {number} valueArray
+ * Calculates the mean and standard deviation for many individual points of data.
+ * Population standard deviation is used. Formula σ = sqrt [ Σ ( Xi - X )2 / N ]
+ * @param {Array<number>} valueArray
  * @returns {object}
  */
 export function multipointMeanSD(valueArray) {
-  let sum = 0;
-  let rowCount = valueArray.length;
-  // TODO get sum
-  // TODO check all values are numbers and get mean
-  let totalMean = sum / (rowCount - 1);
+  // handle empty array being passed in
+  if (valueArray.length === 0) {
+    return {};
+  }
+  const reducer = (accumulator, currentValue) => parseFloat(accumulator) + parseFloat(currentValue);
+
+  const sum = valueArray.reduce(reducer);
+
+  const totalMean = sum / valueArray.length;
 
   let SqrDiffSum = 0;
-
-  // TODO put this function out of its misery.....
-  // It gets the square diff or something
-  valueArray.each(function () {
-    //add only if the value is number
-    if (!isNaN(this.value) && this.value.length != 0) {
-      SqrDiffSum += Math.pow((parseFloat(this.value) - totalMean), 2);
-    }
-
+  valueArray.forEach((inputValue) => {
+    SqrDiffSum += (parseFloat(inputValue) - totalMean) ** 2;
   });
 
-  const totalSD = Math.sqrt(SqrDiffSum / (rowCount - 1));
+  const totalSD = Math.sqrt(SqrDiffSum / valueArray.length);
 
   return { totalMean, totalSD };
 }

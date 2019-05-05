@@ -1,5 +1,7 @@
 /* eslint-disable no-undef */
+/* eslint-disable object-curly-newline */
 import { semToSD, nToPercent, multipointMeanSD, ciToSD } from '../modules/stats_conversions';
+/* eslint-enable object-curly-newline */
 
 test('SEM to SD small N, round SEM', () => {
   const nvalue = 20;
@@ -117,4 +119,33 @@ test('CI to SD, invalid Confidence Interval bound sizes', () => {
     ciToSD(upperBound, lowerBound, nValue, ciPercent);
   }
   expect(testCiThrow).toThrowError(new Error(expectedError));
+});
+
+test('Multipoint two round small numbers', () => {
+  const valuesArray = [2, 3];
+  expect(multipointMeanSD(valuesArray).totalMean).toBe(2.5);
+  expect(multipointMeanSD(valuesArray).totalSD).toBe(0.5);
+});
+
+test('Multipoint ten round small numbers', () => {
+  const valuesArray = [1, 1, 3, 5, 8, 3, 9, 2, 6, 2];
+  expect(multipointMeanSD(valuesArray).totalMean).toBe(4);
+  expect(multipointMeanSD(valuesArray).totalSD).toBeCloseTo(2.72029);
+});
+
+test('Multipoint five small decimal numbers', () => {
+  const valuesArray = [3.14, 42, 2.718281, 1.41421, 10];
+  expect(multipointMeanSD(valuesArray).totalMean).toBeCloseTo(11.854498);
+  expect(multipointMeanSD(valuesArray).totalSD).toBeCloseTo(15.36621);
+});
+
+test('Multipoint handles string numbers', () => {
+  const valuesArray = [2, '3'];
+  expect(multipointMeanSD(valuesArray).totalMean).toBe(2.5);
+  expect(multipointMeanSD(valuesArray).totalSD).toBe(0.5);
+});
+
+test('Multipoint handles empty array', () => {
+  const valuesArray = [];
+  expect(multipointMeanSD(valuesArray)).toEqual({});
 });

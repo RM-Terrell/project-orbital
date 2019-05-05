@@ -10,7 +10,6 @@ class Stats extends Component {
       <div>
         <h1>Stats</h1>
         <div id="stats-page-wrapper">
-          Filler content for stats page
           <CiToSD />
           <MultipointMeanSD />
           <NToPercent />

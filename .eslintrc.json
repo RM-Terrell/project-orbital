@@ -36,6 +36,7 @@
         "react/jsx-curly-brace-presence": "off",
         "react/destructuring-assignment": "off",
         "react/jsx-indent": "off",
-        "react/jsx-one-expression-per-line": "off"
+        "react/jsx-one-expression-per-line": "off",
+        "react/no-multi-comp": "off"
     }
 }
