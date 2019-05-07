@@ -1,0 +1,124 @@
+div#stats-page-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    justify-items: stretch;
+    align-items: stretch
+}
+
+div#ci-to-sd-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    justify-items: stretch;
+    align-items: stretch;
+}
+
+div#multipoint-mean-sd-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    justify-items: stretch;
+    align-items: stretch;
+}
+
+div#n-to-percent-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    justify-items: stretch;
+    align-items: stretch;
+}
+
+div#sem-to-sd-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    justify-items: stretch;
+    align-items: stretch;
+}
+
+div#ci-to-sd-container input#upper-bound-input {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+div#ci-to-sd-container input#lower-bound-input {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+div#ci-to-sd-container input#n-value-ci-input {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+div#ci-to-sd-container select#ci-percent-input {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+div#ci-to-sd-container button {
+    grid-column: 1;
+    grid-row: 3;
+}
+
+div#ci-to-sd-container output#sd-ci-output {
+    grid-column: 3;
+    grid-row: 1 / 2;
+}
+
+div#n-to-percent-container input#given-n-value {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+div#n-to-percent-container input#total-n-value {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+div#n-to-percent-container output#result-given-perc-value {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+div#n-to-percent-container output#result-other-perc-value {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+div#n-to-percent-container button {
+    grid-column: 1;
+    grid-row: 3;
+}
+
+div#sem-to-sd-container input#n-value-sem-input {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+div#sem-to-sd-container input#sem-value-input {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+div#sem-to-sd-container output#sem-sd-result-output {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+div#sem-to-sd-container button {
+    grid-column: 1;
+    grid-row: 3;
+}

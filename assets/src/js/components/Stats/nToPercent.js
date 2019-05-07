@@ -17,10 +17,10 @@ export default class NToPercent extends React.Component {
 
   render() {
     return (
-      <div>
-        <input type="number" required="True" placeholder="Given N Value" id="given-n-value" />=
+      <div id="n-to-percent-container">
+        <input type="number" required="True" placeholder="Given N Value" id="given-n-value" />
+        <input type="number" required="True" placeholder="Total N Value" id="total-n-value" />
         <output type="number" id="result-given-perc-value" />
-        <input type="number" required="True" placeholder="Total N Value" id="total-n-value" />=
         <output type="number" id="result-other-perc-value" />
         <button type="submit" onClick={this.handleSubmit}>N to Percent</button>
       </div>

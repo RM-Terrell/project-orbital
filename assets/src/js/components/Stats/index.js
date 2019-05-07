@@ -8,12 +8,12 @@ class Stats extends Component {
   render() {
     return (
       <div>
-        <h1>Stats</h1>
-        <div id="stats-page-wrapper">
+        <h1>Statistical Conversions</h1>
+        <div id="stats-page-container">
           <CiToSD />
-          <MultipointMeanSD />
           <NToPercent />
           <SemToSD />
+          <MultipointMeanSD />
         </div>
       </div>
     );

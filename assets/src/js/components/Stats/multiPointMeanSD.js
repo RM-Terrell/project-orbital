@@ -27,7 +27,7 @@ export default class MultipointMeanSD extends React.Component {
 
   render() {
     return (
-      <div>
+      <div id="multipoint-mean-sd-container">
         <button type="submit" onClick={this.handleSubmit}>Multipoint Mean SD</button>
         <button type="button">Add Input</button>
         Mean = <output type="number" id="multipoint-total-mean" />

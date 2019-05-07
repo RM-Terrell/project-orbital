@@ -5,7 +5,7 @@ class StatsPage(Base):
     """
     Functions and locators for use on the stats page.
     """
-    _home_page_wrapper_selector = 'div#stats-page-wrapper'
+    _home_page_wrapper_selector = 'div#stats-page-container'
 
     @property
     def stats_page_content(self):

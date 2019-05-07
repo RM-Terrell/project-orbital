@@ -11,15 +11,15 @@ export default class SemToSD extends React.Component {
     this.nValue = document.querySelector('input#n-value-sem-input').value;
     this.semValue = document.querySelector('input#sem-value-input').value;
     const result = semToSD(this.semValue, this.nValue);
-    document.querySelector('output#sd-result-output').value = result;
+    document.querySelector('output#sem-sd-result-output').value = result;
   }
 
   render() {
     return (
-      <div>
+      <div id="sem-to-sd-container">
         <input type="number" required="True" placeholder="N Value" id="n-value-sem-input" />
         <input type="number" required="True" placeholder="SEM Value" id="sem-value-input" />=
-        <output type="number" id="sd-result-output" />
+        <output type="number" id="sem-sd-result-output" />
         <button type="submit" onClick={this.handleSubmit}>SEM to SD</button>
       </div>
     );

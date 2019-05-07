@@ -18,14 +18,14 @@ export default class CiToSD extends React.Component {
     try {
       result = ciToSD(this.upperBound, this.lowerBound, this.nValue, this.ciPercent);
     } catch (error) {
-      document.querySelector('div#ciToSdWrapper div.errorMessages').innerHTML = error.message;
+      document.querySelector('div#ci-to-sd-container div.errorMessages').innerHTML = error.message;
     }
     document.querySelector('output#sd-ci-output').value = result;
   }
 
   render() {
     return (
-      <div id="ciToSdWrapper">
+      <div id="ci-to-sd-container">
         <input type="number" required="True" placeholder="Upper Bound" id="upper-bound-input" />
         <input type="number" required="True" placeholder="Lower Bound" id="lower-bound-input" />
         <input type="number" required="True" placeholder="N Value" id="n-value-ci-input" />
