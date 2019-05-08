@@ -2,9 +2,9 @@
 $font-family: "Open Sans", sans-serif;
 $font-size: 1em;
 
-$nav-background-color: #222;
-$nav-foreground-color: #fff;
-$nav-hover-color: #444;
+$nav-background-color: var(--mid-main-color);
+$nav-foreground-color: var(--bright-text-color);
+$nav-hover-color: var(--light-main-color);
 
 body, html {
   margin: 0;

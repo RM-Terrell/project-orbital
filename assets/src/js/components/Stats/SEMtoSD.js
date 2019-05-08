@@ -16,11 +16,11 @@ export default class SemToSD extends React.Component {
 
   render() {
     return (
-      <div id="sem-to-sd-container">
-        <input type="number" required="True" placeholder="N Value" id="n-value-sem-input" />
-        <input type="number" required="True" placeholder="SEM Value" id="sem-value-input" />=
-        <output type="number" id="sem-sd-result-output" />
-        <button type="submit" onClick={this.handleSubmit}>SEM to SD</button>
+      <div id="sem-to-sd-container" className="stats-component-container">
+        <input required="True" placeholder="N Value" id="n-value-sem-input" />
+        <input required="True" placeholder="SEM Value" id="sem-value-input" />
+        <output id="sem-sd-result-output" />
+        <button className="btn" type="submit" onClick={this.handleSubmit}>SEM to SD</button>
       </div>
     );
   }

@@ -25,18 +25,18 @@ export default class CiToSD extends React.Component {
 
   render() {
     return (
-      <div id="ci-to-sd-container">
-        <input type="number" required="True" placeholder="Upper Bound" id="upper-bound-input" />
-        <input type="number" required="True" placeholder="Lower Bound" id="lower-bound-input" />
-        <input type="number" required="True" placeholder="N Value" id="n-value-ci-input" />
-        <select type="number" required="True" id="ci-percent-input" defaultValue={'95'}>
+      <div id="ci-to-sd-container" className="stats-component-container">
+        <input required="True" placeholder="Upper Bound" id="upper-bound-input" />
+        <input required="True" placeholder="Lower Bound" id="lower-bound-input" />
+        <input required="True" placeholder="N Value" id="n-value-ci-input" />
+        <select required="True" id="ci-percent-input" defaultValue={'95'}>
           <option value="90">90</option>
           <option value="95">95</option>
           <option value="98">98</option>
           <option value="99">99</option>
         </select>
-        <output type="number" id="sd-ci-output" />
-        <button type="submit" onClick={this.handleSubmit}>CI Button</button>
+        <output id="sd-ci-output" />
+        <button className="btn" type="submit" onClick={this.handleSubmit}>CI Button</button>
         <div className="errorMessages" />
       </div>
     );

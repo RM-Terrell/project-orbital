@@ -1,0 +1,62 @@
+/* Standardized Color Scheme inspired by https://www.awwwards.com/sites/veille-reputation-squad */
+:root {
+    --dark-main-color: #222629;
+    --mid-main-color: #474B4F;
+    --light-main-color: #6B6E70;
+    --dark-accent-color: #61892F;
+    --bright-accent-color: #86C232;
+    --bright-text-color: #F1F0EF;
+    --dark-text-color: #85888D;
+}
+
+.btn {
+    border: 4px solid var(--bright-accent-color);
+    background: var(--bright-accent-color);
+    border-radius: 60px;
+    cursor: pointer;
+    padding: 25px 80px;
+    display: inline-block;
+    margin: 15px 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    position: relative;
+}
+
+.btn:hover {
+    border: 4px solid var(--dark-accent-color);
+}
+
+body {
+    color: var(--bright-text-color);
+    background: var(--dark-main-color);
+}
+
+input, select {
+    caret-color: var(--bright-accent-color);
+    color: var(--bright-text-color);
+    float: left;
+    width: calc(100% - 10%);
+    height: 3em;
+    background: var(--dark-main-color);
+}
+
+::placeholder {
+    color: var(--dark-text-color);
+}
+
+option {
+    color: var(--dark-text-color);
+}
+
+input:focus {
+    outline: none !important;
+    border-color: var(--bright-accent-color);
+    box-shadow: 0 0 10px var(--bright-accent-color);
+}
+
+textarea:focus {
+    outline: none !important;
+    border-color: var(--bright-accent-color);
+    box-shadow: 0 0 10px var(--bright-accent-color);
+}

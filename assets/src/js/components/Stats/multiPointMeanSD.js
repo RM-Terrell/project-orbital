@@ -5,7 +5,7 @@ class MultipointInput extends React.Component {
   render() {
     return (
       <div>
-        <input type="number" className="multipoint-input" />
+        <input className="multipoint-input" />
       </div>
     );
   }
@@ -27,11 +27,11 @@ export default class MultipointMeanSD extends React.Component {
 
   render() {
     return (
-      <div id="multipoint-mean-sd-container">
-        <button type="submit" onClick={this.handleSubmit}>Multipoint Mean SD</button>
-        <button type="button">Add Input</button>
-        Mean = <output type="number" id="multipoint-total-mean" />
-        Standard Deviation = <output type="number" id="multipoint-total-sd" />
+      <div id="multipoint-mean-sd-container" className="stats-component-container">
+        <button className="btn" type="submit" onClick={this.handleSubmit}>Multipoint Mean SD</button>
+        <button className="btn" type="button">Add Input</button>
+        <output id="multipoint-total-mean" />
+        <output id="multipoint-total-sd" />
         <div id="multipoint-input-wrapper">
           <MultipointInput />
           <MultipointInput />
