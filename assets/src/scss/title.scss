@@ -1,5 +1,4 @@
 
-$font-family: "Open Sans", sans-serif;
 $font-size: 1em;
 
 $nav-background-color: var(--mid-main-color);
@@ -8,7 +7,6 @@ $nav-hover-color: var(--light-main-color);
 
 body, html {
   margin: 0;
-  font: $font-size $font-family;
 }
 
 .content {

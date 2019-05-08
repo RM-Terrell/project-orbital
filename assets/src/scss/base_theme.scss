@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Oxygen');
 /* Standardized Color Scheme inspired by https://www.awwwards.com/sites/veille-reputation-squad */
 :root {
     --dark-main-color: #222629;
@@ -7,6 +8,7 @@
     --bright-accent-color: #86C232;
     --bright-text-color: #F1F0EF;
     --dark-text-color: #85888D;
+    --font-family: 'Oxygen', sans-serif;
 }
 
 .btn {
@@ -30,6 +32,7 @@
 body {
     color: var(--bright-text-color);
     background: var(--dark-main-color);
+    font-family: var(--font-family);
 }
 
 input, select {
