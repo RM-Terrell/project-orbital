@@ -16,13 +16,14 @@
     background: var(--bright-accent-color);
     border-radius: 60px;
     cursor: pointer;
-    padding: 25px 80px;
+    padding: 10px 40px;
     display: inline-block;
-    margin: 15px 30px;
+    margin: 10px 15px;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: 700;
     position: relative;
+    width: 12em;
 }
 
 .btn:hover {
@@ -42,6 +43,11 @@ input, select {
     width: calc(100% - 10%);
     height: 3em;
     background: var(--dark-main-color);
+}
+
+output {
+    height: 3em;
+    background: var(--light-main-color);
 }
 
 ::placeholder {

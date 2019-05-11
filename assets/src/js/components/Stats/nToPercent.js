@@ -17,7 +17,7 @@ export default class NToPercent extends React.Component {
 
   render() {
     return (
-      <div id="n-to-percent-container" className="stats-component-container">
+      <div id="n-to-percent-container" className={`stats-component-container`}>
         <input required="True" placeholder="Given N Value" id="given-n-value" />
         <input required="True" placeholder="Total N Value" id="total-n-value" />
         <output id="result-given-perc-value" />

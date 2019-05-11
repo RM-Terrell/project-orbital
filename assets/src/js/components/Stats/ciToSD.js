@@ -18,14 +18,14 @@ export default class CiToSD extends React.Component {
     try {
       result = ciToSD(this.upperBound, this.lowerBound, this.nValue, this.ciPercent);
     } catch (error) {
-      document.querySelector('div#ci-to-sd-container div.errorMessages').innerHTML = error.message;
+      document.querySelector('div#ci-to-sd-container div#ci-sd-error-messages').innerHTML = error.message;
     }
     document.querySelector('output#sd-ci-output').value = result;
   }
 
   render() {
     return (
-      <div id="ci-to-sd-container" className="stats-component-container">
+      <div id="ci-to-sd-container" className={`stats-component-container`}>
         <input required="True" placeholder="Upper Bound" id="upper-bound-input" />
         <input required="True" placeholder="Lower Bound" id="lower-bound-input" />
         <input required="True" placeholder="N Value" id="n-value-ci-input" />
@@ -37,7 +37,7 @@ export default class CiToSD extends React.Component {
         </select>
         <output id="sd-ci-output" />
         <button className="btn" type="submit" onClick={this.handleSubmit}>CI Button</button>
-        <div className="errorMessages" />
+        <div id="ci-sd-error-messages" />
       </div>
     );
   }

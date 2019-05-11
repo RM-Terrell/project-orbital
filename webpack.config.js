@@ -1,7 +1,9 @@
+/* eslint-disable */
 var path = require('path');
 var webpack = require('webpack');
 var BundleTracker = require('webpack-bundle-tracker');
 var ExtractText = require('extract-text-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
   entry:  path.join(__dirname, 'assets/src/js/main'),
@@ -10,6 +12,7 @@ module.exports = {
     filename: '[name]-[hash].js'
   },
   plugins: [
+    new CleanWebpackPlugin(),
     new BundleTracker({
       path: __dirname,
       filename: 'webpack-stats.json'

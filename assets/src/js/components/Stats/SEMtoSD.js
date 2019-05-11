@@ -16,7 +16,7 @@ export default class SemToSD extends React.Component {
 
   render() {
     return (
-      <div id="sem-to-sd-container" className="stats-component-container">
+      <div id="sem-to-sd-container" className={`stats-component-container`}>
         <input required="True" placeholder="N Value" id="n-value-sem-input" />
         <input required="True" placeholder="SEM Value" id="sem-value-input" />
         <output id="sem-sd-result-output" />

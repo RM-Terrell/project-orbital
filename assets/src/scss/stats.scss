@@ -1,132 +1,159 @@
 div.stats-component-container {
     margin-left: 10px;
-}
-
-div#stats-page-container {
     display: grid;
-    grid-template-columns: .75fr;
-    grid-template-rows: .5fr .5fr .5fr .5fr;
-    grid-column-gap: 20px;
-    grid-row-gap: 20px;
     justify-items: stretch;
     align-items: stretch
 }
 
+div#stats-page-container {
+    grid-template-columns: .75fr;
+    grid-template-rows: .5fr .5fr .5fr .5fr;
+}
+
 div#ci-to-sd-container {
-    display: grid;
-    grid-template-columns: 20vw 20vw auto;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-column-gap: 20px;
-    grid-row-gap: 20px;
-    justify-items: stretch;
-    align-items: stretch;
+    grid-template-columns: repeat(4, 10vw);
+    grid-template-rows: 1fr 1fr;
 }
 
 div#n-to-percent-container {
-    display: grid;
-    grid-template-columns: 20vw auto;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-column-gap: 20px;
-    grid-row-gap: 20px;
-    justify-items: stretch;
-    align-items: stretch;
+    grid-template-columns: repeat(3, 10vw);
+    grid-template-rows: 1fr 1fr;
 }
 
 div#multipoint-mean-sd-container {
-    display: grid;
-    grid-template-columns: 20vw 20vw auto;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-column-gap: 20px;
-    grid-row-gap: 20px;
-    justify-items: stretch;
-    align-items: stretch;
+
 }
 
 div#sem-to-sd-container {
-    display: grid;
-    grid-template-columns: 20vw auto;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-column-gap: 20px;
-    grid-row-gap: 20px;
-    justify-items: stretch;
-    align-items: stretch;
+    grid-template-columns: repeat(3, 10vw);
+    grid-template-rows: 1fr 1fr;
 }
 
 div#ci-to-sd-container input#upper-bound-input {
-    grid-column: 1;
+    grid-column: 2;
     grid-row: 1;
 }
 
 div#ci-to-sd-container input#lower-bound-input {
-    grid-column: 1;
+    grid-column: 2;
     grid-row: 2;
 }
 
 div#ci-to-sd-container input#n-value-ci-input {
-    grid-column: 2;
+    grid-column: 3;
     grid-row: 1;
 }
 
 div#ci-to-sd-container select#ci-percent-input {
-    grid-column: 2;
+    grid-column: 3;
     grid-row: 2;
 }
 
 div#ci-to-sd-container button {
     grid-column: 1;
-    grid-row: 3;
-}
-
-div#ci-to-sd-container output#sd-ci-output {
-    grid-column: 3;
-    grid-row: 1 / 2;
-}
-
-div#n-to-percent-container input#given-n-value {
-    grid-column: 1;
     grid-row: 1;
 }
 
-div#n-to-percent-container input#total-n-value {
+div#ci-to-sd-container output#sd-ci-output {
+    grid-column: 4;
+    grid-row: 1;
+}
+
+div#ci-to-sd-container div#ci-sd-error-messages {
     grid-column: 1;
     grid-row: 2;
 }
 
-div#n-to-percent-container output#result-given-perc-value {
+div#n-to-percent-container input#given-n-value {
     grid-column: 2;
     grid-row: 1;
 }
 
-div#n-to-percent-container output#result-other-perc-value {
+div#n-to-percent-container input#total-n-value {
     grid-column: 2;
+    grid-row: 2;
+}
+
+div#n-to-percent-container output#result-given-perc-value {
+    grid-column: 3;
+    grid-row: 1;
+}
+
+div#n-to-percent-container output#result-other-perc-value {
+    grid-column: 3;
     grid-row: 2;
 }
 
 div#n-to-percent-container button {
     grid-column: 1;
-    grid-row: 3;
+    grid-row: 1;
 }
 
 div#sem-to-sd-container input#n-value-sem-input {
-    grid-column: 1;
+    grid-column: 2;
     grid-row: 1;
 }
 
 div#sem-to-sd-container input#sem-value-input {
-    grid-column: 1;
-    grid-row: 2;
-}
-
-div#sem-to-sd-container output#sem-sd-result-output {
     grid-column: 2;
     grid-row: 2;
 }
 
+div#sem-to-sd-container output#sem-sd-result-output {
+    grid-column: 3;
+    grid-row: 1;
+}
+
 div#sem-to-sd-container button {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+div#multipoint-buttons-container {
+    display: grid;
+    float: left;
+    grid-template-columns: repeat(1, 10vw);
+    grid-template-rows: repeat(3, 1fr);
+
+}
+div#multipoint-outputs-container {
+    display: grid;
+    float: left;
+    grid-template-columns: repeat(1, 10vw);
+    grid-template-rows: repeat(2, 1fr);
+}
+
+div#multipoint-inputs-container {
+    display: grid;
+    float: left;
+    grid-template-columns: repeat(1, 10vw);
+}
+
+div#multipoint-mean-sd-container button.submit {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+div#multipoint-mean-sd-container button#add-multipoint-input {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+div#multipoint-mean-sd-container button#delete-multipoint-input {
     grid-column: 1;
     grid-row: 3;
 }
 
-output {
-    background: var(--light-main-color);
+div#multipoint-mean-sd-container output#multipoint-total-mean {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+div#multipoint-mean-sd-container output#multipoint-total-sd {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+div#multipoint-inputs-container div.multipoint-input-container {
+    grid-row: auto;
 }

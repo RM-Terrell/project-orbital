@@ -8,7 +8,7 @@ class Stats extends Component {
   render() {
     return (
       <div>
-        <h1>Statistical Conversions</h1>
+        <h2>Statistical Conversions</h2>
         <div id="stats-page-container">
           <CiToSD />
           <NToPercent />
