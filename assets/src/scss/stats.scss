@@ -2,7 +2,8 @@ div.stats-component-container {
     margin-left: 10px;
     display: grid;
     justify-items: stretch;
-    align-items: stretch
+    align-items: stretch;
+    width: 75%;
 }
 
 div#stats-page-container {
@@ -11,12 +12,12 @@ div#stats-page-container {
 }
 
 div#ci-to-sd-container {
-    grid-template-columns: repeat(4, 10vw);
+    grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 1fr 1fr;
 }
 
 div#n-to-percent-container {
-    grid-template-columns: repeat(3, 10vw);
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr 1fr;
 }
 
@@ -25,7 +26,7 @@ div#multipoint-mean-sd-container {
 }
 
 div#sem-to-sd-container {
-    grid-template-columns: repeat(3, 10vw);
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr 1fr;
 }
 

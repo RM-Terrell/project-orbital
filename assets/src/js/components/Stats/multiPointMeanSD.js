@@ -20,6 +20,26 @@ export default class MultipointMeanSD extends React.Component {
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.appendMultipoint = this.appendMultipoint.bind(this);
+    this.removeMultipoint = this.removeMultipoint.bind(this);
+    this.childMultipoints = [];
+    this.state = {
+      showdata: this.childMultipoints,
+    };
+  }
+
+  appendMultipoint() {
+    this.childMultipoints.push(<MultipointInput key={this.childMultipoints.length} />);
+    this.setState({
+      showdata: this.childMultipoints,
+    });
+  }
+
+  removeMultipoint() {
+    this.childMultipoints.pop();
+    this.setState({
+      showdata: this.childMultipoints,
+    });
   }
 
   handleSubmit() {
@@ -34,18 +54,22 @@ export default class MultipointMeanSD extends React.Component {
     return (
       <div id="multipoint-mean-sd-container">
         <div id="multipoint-buttons-container">
-          <button className="btn" type="submit" onClick={this.handleSubmit}>Multipoint Mean SD</button>
-          <button className="btn" type="button" id="add-multipoint-input">Add Input</button>
-          <button className="btn" type="button" id="delete-multipoint-input">Delete Input</button>
+          <button className="btn" type="submit" onClick={this.handleSubmit}>
+            Multipoint Mean SD
+          </button>
+          <button className="btn" type="button" onClick={this.appendMultipoint} id="add-multipoint-input">
+            Add Input
+          </button>
+          <button className="btn" type="button" onClick={this.removeMultipoint} id="delete-multipoint-input">
+            Delete Input
+          </button>
         </div>
         <div id="multipoint-outputs-container">
           <output id="multipoint-total-mean" />
           <output id="multipoint-total-sd" />
         </div>
         <div id="multipoint-inputs-container">
-          <MultipointInput />
-          <MultipointInput />
-          <MultipointInput />
+          {this.childMultipoints}
         </div>
       </div>
     );
