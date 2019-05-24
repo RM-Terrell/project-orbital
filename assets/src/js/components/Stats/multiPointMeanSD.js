@@ -1,50 +1,16 @@
 import React from 'react';
 import { multipointMeanSD } from './modules/stats_conversions';
 
-/* Multipoint is not inside of a stats-component-container (a grid) because when dynamically
-adding input fields, the outer grid from stats-component-container will stretch in length and
-resize the button and output elements vertically which is undesirable. Thus three separate
-grids are used with no wrapping grid. */
-
-class MultipointInput extends React.Component {
-  render() {
-    return (
-      <div className="multipoint-input-container">
-        <input className="multipoint-input" />
-      </div>
-    );
-  }
-}
 
 export default class MultipointMeanSD extends React.Component {
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.appendMultipoint = this.appendMultipoint.bind(this);
-    this.removeMultipoint = this.removeMultipoint.bind(this);
-    this.childMultipoints = [];
-    this.state = {
-      showdata: this.childMultipoints,
-    };
-  }
-
-  appendMultipoint() {
-    this.childMultipoints.push(<MultipointInput key={this.childMultipoints.length} />);
-    this.setState({
-      showdata: this.childMultipoints,
-    });
-  }
-
-  removeMultipoint() {
-    this.childMultipoints.pop();
-    this.setState({
-      showdata: this.childMultipoints,
-    });
   }
 
   handleSubmit() {
-    this.inputs = Array.from(document.querySelectorAll('div#multipoint-inputs-container input'));
-    this.inputValues = this.inputs.map(input => input.value);
+    this.inputValues = document.querySelector('input#multipoint-input').value;
+    this.inputValues = this.inputValues.split(',');
     const meanSDResultsObject = multipointMeanSD(this.inputValues);
     document.querySelector('output#multipoint-total-mean').value = meanSDResultsObject.totalMean;
     document.querySelector('output#multipoint-total-sd').value = meanSDResultsObject.totalSD;
@@ -52,25 +18,13 @@ export default class MultipointMeanSD extends React.Component {
 
   render() {
     return (
-      <div id="multipoint-mean-sd-container">
-        <div id="multipoint-buttons-container">
-          <button className="btn" type="submit" onClick={this.handleSubmit}>
-            Multipoint Mean SD
-          </button>
-          <button className="btn" type="button" onClick={this.appendMultipoint} id="add-multipoint-input">
-            Add Input
-          </button>
-          <button className="btn" type="button" onClick={this.removeMultipoint} id="delete-multipoint-input">
-            Delete Input
-          </button>
-        </div>
-        <div id="multipoint-outputs-container">
-          <output id="multipoint-total-mean" />
-          <output id="multipoint-total-sd" />
-        </div>
-        <div id="multipoint-inputs-container">
-          {this.childMultipoints}
-        </div>
+      <div id="multipoint-mean-sd-container" className={`stats-component-container`}>
+        <button className="btn" type="submit" onClick={this.handleSubmit}>
+          Multipoint Mean SD
+        </button>
+        <output id="multipoint-total-mean" />
+        <output id="multipoint-total-sd" />
+        <input id="multipoint-input" placeholder="Values" />
       </div>
     );
   }

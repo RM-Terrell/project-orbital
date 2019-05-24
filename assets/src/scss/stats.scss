@@ -4,6 +4,12 @@ div.stats-component-container {
     justify-items: stretch;
     align-items: stretch;
     width: 75%;
+    border: solid var(--mid-main-color);
+    margin-bottom: 10px;
+}
+
+div.stats-error-messages {
+    margin: 10px;
 }
 
 div#stats-page-container {
@@ -22,7 +28,8 @@ div#n-to-percent-container {
 }
 
 div#multipoint-mean-sd-container {
-    // TODO fill in organization rules
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
 }
 
 div#sem-to-sd-container {
@@ -110,51 +117,17 @@ div#sem-to-sd-container button {
     grid-row: 1;
 }
 
-div#multipoint-buttons-container {
-    display: grid;
-    float: left;
-    grid-template-columns: repeat(1, 10vw);
-    grid-template-rows: repeat(3, 1fr);
-
-}
-div#multipoint-outputs-container {
-    display: grid;
-    float: left;
-    grid-template-columns: repeat(1, 10vw);
-    grid-template-rows: repeat(2, 1fr);
-}
-
-div#multipoint-inputs-container {
-    display: grid;
-    float: left;
-    grid-template-columns: repeat(1, 10vw);
-}
-
 div#multipoint-mean-sd-container button.submit {
     grid-column: 1;
     grid-row: 1;
 }
 
-div#multipoint-mean-sd-container button#add-multipoint-input {
-    grid-column: 1;
-    grid-row: 2;
-}
-
-div#multipoint-mean-sd-container button#delete-multipoint-input {
-    grid-column: 1;
-    grid-row: 3;
-}
-
 div#multipoint-mean-sd-container output#multipoint-total-mean {
-    grid-column: 1;
+    grid-column: 3;
     grid-row: 1;
 }
 
 div#multipoint-mean-sd-container output#multipoint-total-sd {
-    grid-column: 1;
+    grid-column: 3;
     grid-row: 2;
-}
-
-div#multipoint-inputs-container div.multipoint-input-container {
-    grid-row: auto;
 }

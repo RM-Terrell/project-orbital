@@ -37,7 +37,7 @@ export default class CiToSD extends React.Component {
         </select>
         <output id="sd-ci-output" />
         <button className="btn" type="submit" onClick={this.handleSubmit}>CI Button</button>
-        <div id="ci-sd-error-messages" />
+        <div id="ci-sd-error-messages" className="stats-error-messages" />
       </div>
     );
   }

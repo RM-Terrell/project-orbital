@@ -12,7 +12,7 @@ export function ciToSD(upperBound, lowerBound, nValue, ciValuePercent) {
   // Confidence intervals will always be int's, no need for parsefloat
   const numberCiPercent = parseInt(ciValuePercent, 10);
   if (upperBound <= lowerBound) {
-    throw new Error('Upper Bound must be larger than the lower.');
+    throw new Error('Upper bound must be larger than the lower.');
   }
   if (numberCiPercent === 90) {
     ciMultiplier = 1.645;
