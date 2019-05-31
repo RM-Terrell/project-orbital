@@ -114,7 +114,7 @@ test('CI to SD, invalid Confidence Interval bound sizes', () => {
   const nValue = 20;
   const ciPercent = 95;
 
-  const expectedError = 'Upper Bound must be larger than the lower.';
+  const expectedError = 'Upper bound must be larger than the lower.';
   function testCiThrow() {
     ciToSD(upperBound, lowerBound, nValue, ciPercent);
   }
