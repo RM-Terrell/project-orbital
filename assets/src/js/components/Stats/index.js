@@ -10,10 +10,13 @@ class Stats extends Component {
       <div>
         <h2>Statistical Conversions</h2>
         <div id="stats-page-container">
-          <CiToSD />
-          <NToPercent />
-          <SemToSD />
-          <MultipointMeanSD />
+          <div id="stats-tools-container">
+            <CiToSD />
+            <NToPercent />
+            <SemToSD />
+            <MultipointMeanSD />
+          </div>
+          <div id="stats-tooltips-container" />
         </div>
       </div>
     );

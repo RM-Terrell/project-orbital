@@ -1,19 +1,24 @@
 div.stats-component-container {
+    // Styling for each individual stats conversion tool
     margin-left: 10px;
     display: grid;
     justify-items: stretch;
     align-items: stretch;
-    width: 75%;
     border: solid var(--mid-main-color);
     margin-bottom: 10px;
+}
+
+div#stats-page-container {
+    // Organization of the stats tools and the tool tips columns
+    display: grid;
+    grid-template-columns: 66vw 33vw;
 }
 
 div.stats-error-messages {
     margin: 10px;
 }
 
-div#stats-page-container {
-    grid-template-columns: .75fr;
+div#stats-tools-container {
     grid-template-rows: .5fr .5fr .5fr .5fr;
 }
 

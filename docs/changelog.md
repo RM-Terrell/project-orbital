@@ -1,16 +1,21 @@
 # Orbital Changelog
 
+## May 30th 2019
+### Added
+- So many tests
+
+
 ## May 10th 2019
-## Fixed
+### Fixed
 - Lots of styling and spacing on the stats page
-## Added
+### Added
 - Auto cleanup of ./dist folder when building app
-## Changed
+### Changed
 - Package updates
 
 
 ## May 8th 2019
-## Added
+### Added
 - Color scheme and a lot of styling
 
 
