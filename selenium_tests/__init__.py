@@ -1,4 +1,3 @@
-import abc
 import unittest
 
 from selenium_tests.drivers import firefox_browser
@@ -9,12 +8,9 @@ SERVER_URL = 'http://127.0.0.1:8000/'
 
 class BaseTest(unittest.TestCase):
     """
-    Abstract base class that all Selenium tests inherit from.
+    Base class that all Selenium tests inherit from.
     """
-    __metaclass__ = abc.ABCMeta
-
     @classmethod
-    @abc.abstractmethod
     def setUpClass(cls):
         super(BaseTest, cls).setUpClass()
         cls.browser = firefox_browser()
@@ -22,7 +18,6 @@ class BaseTest(unittest.TestCase):
         cls.server_url = SERVER_URL
 
     @classmethod
-    @abc.abstractmethod
     def tearDownClass(cls):
         cls.browser.quit()
         super(BaseTest, cls).tearDownClass()

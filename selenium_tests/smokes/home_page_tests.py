@@ -1,7 +1,4 @@
-import time
 import unittest
-import sys
-import os
 
 from selenium_tests import BaseTest
 from selenium_tests.page_objects.home_page import HomePage
@@ -9,8 +6,10 @@ from selenium_tests.page_objects.home_page import HomePage
 
 class NavBarTests(BaseTest):
     """
-    Tests that check the behavior of pages landed on from the nav bar.
-    Smokey in nature. Best paired with scotch.
+    Tests that check the behavior of the home page. Tests in this class
+    follow the paradigm of "Does it load all without error?" and do not investigate
+    detailed functionality. Good for making sure all paged are at least functional
+    after major work. Run before functionality tests for efficient testing.
     """
 
     def setUp(self):
