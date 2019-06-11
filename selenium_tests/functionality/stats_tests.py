@@ -7,7 +7,7 @@ from selenium_tests.page_objects.nav_bar import NavBar
 
 class StatsFunctionalityTests(BaseTest):
     """
-    Test checking end to end functionality of the stats page tools.
+    Tests checking end to end functionality of the stats page tools.
     """
 
     def setUp(self):
@@ -18,10 +18,15 @@ class StatsFunctionalityTests(BaseTest):
 
     def test_ci_to_sd_outputs_a_result(self):
         """
-        Given a user enters valid data into the CI to SD tool,
-        verify that some number is returned in the output field
+        Given a user enters valid data into the CI to SD tool, verify that some number
+        is returned in the output field.
         """
-        # TODO finish test
+        result = self.stats_page.convert_ci_to_sd(3, 2, 10, 90)
+        try:
+            sd_result = float(result)
+            self.assertIsInstance(sd_result, float)
+        except ValueError as e:
+            self.fail(e)
 
 if __name__ == '__main__':
     unittest.main()

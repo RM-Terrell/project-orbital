@@ -21,3 +21,13 @@ For example to run just the smoke tests for the Stats page the following command
 
 No `.py` at the end of the file name.
 
+
+## Test Assertion Logical Order
+
+When applicable all tests should follow the assertion comparison order of expected first, actual second. For example if you expected a function to return 3, but it actually returned 2 you would test this by the following:
+
+> assertEqual(3, 2)
+
+and NOT BY:
+
+> assertEqual(2, 3)
