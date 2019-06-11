@@ -24,7 +24,7 @@ test('SEM to SD very large N decimal SEM', () => {
   expect(semToSD(sem, nvalue)).toBeCloseTo(expectedSD);
 });
 
-// TODO throw negative and strings at SEM converter
+// TODO test sem rejecting a negative number
 
 test('N converts to percent, rounder numbers', () => {
   const givenN = 2;
@@ -102,10 +102,7 @@ test('CI to SD, invalid Confidence Interval percent', () => {
   const ciPercent = 42;
 
   const expectedError = 'Invalid confidence interval percent.';
-  function testCiThrow() {
-    ciToSD(upperBound, lowerBound, nValue, ciPercent);
-  }
-  expect(testCiThrow).toThrowError(new Error(expectedError));
+  expect(ciToSD(upperBound, lowerBound, nValue, ciPercent)).toBe(expectedError);
 });
 
 test('CI to SD, invalid Confidence Interval bound sizes', () => {
@@ -115,10 +112,7 @@ test('CI to SD, invalid Confidence Interval bound sizes', () => {
   const ciPercent = 95;
 
   const expectedError = 'Upper bound must be larger than the lower.';
-  function testCiThrow() {
-    ciToSD(upperBound, lowerBound, nValue, ciPercent);
-  }
-  expect(testCiThrow).toThrowError(new Error(expectedError));
+  expect(ciToSD(upperBound, lowerBound, nValue, ciPercent)).toBe(expectedError);
 });
 
 test('Multipoint two round small numbers', () => {

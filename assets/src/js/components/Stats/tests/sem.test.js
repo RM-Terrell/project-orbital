@@ -17,7 +17,7 @@ describe('SEM to SD component', () => {
   });
   test('has the 1 needed output', () => {
     const wrapper = shallow(<SemToSD />);
-    expect(wrapper.find('output')).toHaveLength(2);
+    expect(wrapper.find('output')).toHaveLength(1);
   });
   test('has the 2 needed inputs', () => {
     const wrapper = shallow(<SemToSD />);

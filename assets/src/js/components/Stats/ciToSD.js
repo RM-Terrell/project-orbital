@@ -13,14 +13,14 @@ export default class CiToSD extends React.Component {
     this.nValue = document.querySelector('input#n-value-ci-input').value;
     const ciPercElement = document.querySelector('select#ci-percent-input');
     this.ciPercent = ciPercElement.options[ciPercElement.selectedIndex].value;
-    let result;
-
-    try {
-      result = ciToSD(this.upperBound, this.lowerBound, this.nValue, this.ciPercent);
-    } catch (error) {
-      document.querySelector('div#ci-to-sd-container div#ci-sd-error-messages').innerHTML = error.message;
+    const result = ciToSD(this.upperBound, this.lowerBound, this.nValue, this.ciPercent);
+    if (Number.isFinite(result)) {
+      document.querySelector('output#sd-ci-output').value = result;
+      // TODO TEST THIS CLEARING BEHAVIOR
+      document.querySelector('div#ci-to-sd-container div#ci-sd-error-messages').innerHTML = '';
+    } else {
+      document.querySelector('div#ci-to-sd-container div#ci-sd-error-messages').innerHTML = result;
     }
-    document.querySelector('output#sd-ci-output').value = result;
   }
 
   render() {

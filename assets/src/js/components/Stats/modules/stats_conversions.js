@@ -12,7 +12,7 @@ export function ciToSD(upperBound, lowerBound, nValue, ciValuePercent) {
   // Confidence intervals will always be int's, no need for parsefloat
   const numberCiPercent = parseInt(ciValuePercent, 10);
   if (upperBound <= lowerBound) {
-    throw new Error('Upper bound must be larger than the lower.');
+    return 'Upper bound must be larger than the lower.';
   }
   if (numberCiPercent === 90) {
     ciMultiplier = 1.645;
@@ -23,7 +23,7 @@ export function ciToSD(upperBound, lowerBound, nValue, ciValuePercent) {
   } else if (numberCiPercent === 99) {
     ciMultiplier = 2.575;
   } else {
-    throw new Error('Invalid confidence interval percent.');
+    return 'Invalid confidence interval percent.';
   }
   const sdResult = ((upperBound - lowerBound) * Math.sqrt(nValue) / (2 * ciMultiplier));
 
@@ -80,6 +80,7 @@ export function nToPercent(givenN, totalN) {
  * @returns {number} sdResult
  */
 export function semToSD(sem, nValue) {
+  // TODO make this reject a negative SEM value
   const sdResult = Math.sqrt(nValue) * sem;
   return sdResult;
 }

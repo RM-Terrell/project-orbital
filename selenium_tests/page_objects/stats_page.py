@@ -140,4 +140,4 @@ class StatsPage(Base):
         self.select_ci_sd_percent_value(percent)
         self.ci_sd_button.click()
 
-        return self.ci_sd_sd_output.get_attribute("value")
+        return self.ci_sd_sd_output.get_attribute('value')

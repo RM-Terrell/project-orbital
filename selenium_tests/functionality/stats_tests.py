@@ -16,17 +16,25 @@ class StatsFunctionalityTests(BaseTest):
         self.nav_bar = NavBar(self.browser)
         self.nav_bar.navigate_to_stats_page()
 
-    def test_ci_to_sd_outputs_a_result(self):
+    def test_ci_to_sd_output_result(self):
         """
-        Given a user enters valid data into the CI to SD tool, verify that some number
-        is returned in the output field.
+        Given a user enters valid data into the CI to SD tool, verify a number is output
+        and that the number is the correct value.
         """
         result = self.stats_page.convert_ci_to_sd(3, 2, 10, 90)
         try:
             sd_result = float(result)
+            expected_sd_result = 0.9611786201119694
             self.assertIsInstance(sd_result, float)
+            self.assertEqual(expected_sd_result, sd_result)
         except ValueError as e:
             self.fail(e)
+
+    # Todo SEM test
+
+    # TODO Percent to Percent test
+
+    # TODO Multipoint test
 
 if __name__ == '__main__':
     unittest.main()
