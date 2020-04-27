@@ -27,6 +27,7 @@ class StatsFunctionalityTests(BaseTest):
             expected_sd_result = 0.9611786201119694
             self.assertIsInstance(sd_result, float)
             self.assertEqual(expected_sd_result, sd_result)
+        # ValueError will result from tool returning a string incapable of being convert to a number
         except ValueError as e:
             self.fail(e)
 
@@ -41,6 +42,7 @@ class StatsFunctionalityTests(BaseTest):
             expected_sd_result = 22.360679774997898
             self.assertIsInstance(sd_result, float)
             self.assertEqual(expected_sd_result, sd_result)
+        # ValueError will result from tool returning a string incapable of being convert to a number
         except ValueError as e:
             self.fail(e)
 
@@ -59,6 +61,7 @@ class StatsFunctionalityTests(BaseTest):
             self.assertIsInstance(remainder_perc_result, float)
             self.assertEqual(expected_given_perc_result, perc_result)
             self.assertEqual(expected_remainder_perc_result, remainder_perc_result)
+        # ValueError will result from tool returning a string incapable of being convert to a number
         except ValueError as e:
             self.fail(e)
 
@@ -70,6 +73,7 @@ class StatsFunctionalityTests(BaseTest):
         result = self.stats_page.convert_multipoint_to_sd()
         try:
             # TODO
+        # ValueError will result from tool returning a string incapable of being convert to a number
         except ValueError as e:
             self.fail(e)
 

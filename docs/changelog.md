@@ -1,5 +1,8 @@
 # Orbital Changelog
 
+# April 27th 2020
+## Reduced and refined the scope of the project by removing the unfinished calculator, pom, and note taker
+
 ## May 30th 2019
 ### Added
 - So many tests
