@@ -12,7 +12,7 @@ YOU MUST INSTALL PYTHON ON YOUR SYSTEM PATH DURING INSTALL. For windows installs
 
 At the bottom you can see a checkbox about adding Python to path. Do that. More info on PATH setup including how to do it on Unix/Linux systems found [here](https://www.tutorialspoint.com/python/python_environment.htm)
 
-This project also utilizes Node.js and the NPM network. You can get Node.js (which include NPM) from [here](https://nodejs.org/en/).
+This project also utilizes Node.js and NPM. You can get Node.js (which include NPM) from [here](https://nodejs.org/en/).
 
 After cloning the repo and installing the above mentioned software, run the following install commands from inside the project directory (project-orbital):
 
