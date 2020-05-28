@@ -34,7 +34,7 @@ This will build all the JS and CSS files as they are currently coded. To have we
 
 and it will rebuild on save. With the JS and CSS files built you can run the Django server to properly start the website.
 
-To start the Django server, navigate inside the `django_backend` directory, then apply all initial migrations with the following command:
+To start the Django server, navigate inside the `api` directory, then apply all initial migrations with the following command:
 
 > python manage.py migrate
 
@@ -46,7 +46,7 @@ To either stop the Django server, or stop the NPM watch script, use the console 
 
 > crtl + c
 
-Because the npm and django commands need to run in two different directories (the main project dir and django_backend) it will probably be helpful to have two separate terminals up when developing. In vscode with both commands on run mode it looks like this:
+Because the npm and django commands need to run in two different directories (the main project dir and api) it will probably be helpful to have two separate terminals up when developing. In vscode with both commands on run mode it looks like this:
 
 ![terms](/docs/images/terms.png)
 
