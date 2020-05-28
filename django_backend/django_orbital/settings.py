@@ -56,7 +56,7 @@ ROOT_URLCONF = 'django_orbital.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, '../templates')],
+        'DIRS': [os.path.join(BASE_DIR, '../react_frontend/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -70,7 +70,7 @@ TEMPLATES = [
 ]
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, '../assets'),
+    os.path.join(BASE_DIR, '../react_frontend/assets'),
 )
 
 WSGI_APPLICATION = 'django_orbital.wsgi.application'
@@ -128,6 +128,6 @@ STATIC_URL = '/static/'
 WEBPACK_LOADER = {
     'DEFAULT': {
         'BUNDLE_DIR_NAME': 'dist/',
-        'STATS_FILE': os.path.join(BASE_DIR, '../webpack-stats.json'),
+        'STATS_FILE': os.path.join(BASE_DIR, '../react_frontend/webpack-stats.json'),
     }
 }

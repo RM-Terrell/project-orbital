@@ -1,7 +1,7 @@
 node_modules
-assets/dist
+react_frontend/assets/dist
 webpack-stats.json
-django_orbital/db.sqlite3
+django_backend/db.sqlite3
 *.pyc
 .vscode/settings.json
 .vscode/launch.json

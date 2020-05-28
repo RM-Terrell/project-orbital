@@ -6,9 +6,9 @@ var ExtractText = require('extract-text-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
-  entry:  path.join(__dirname, 'assets/src/js/main'),
+  entry:  path.join(__dirname, '/assets/src/js/main'),
   output: {
-    path: path.join(__dirname, 'assets/dist'),
+    path: path.join(__dirname, '/assets/dist'),
     filename: '[name]-[hash].js'
   },
   plugins: [
