@@ -8,6 +8,7 @@
     "start": "./node_modules/.bin/webpack --config webpack.config.js",
     "watch": "npm run start -- --watch"
   },
+  "proxy": "http://api:8000",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/RM-Terrell/project-orbital.git"

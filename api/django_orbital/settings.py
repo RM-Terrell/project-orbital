@@ -25,7 +25,7 @@ SECRET_KEY = '#@_vy-o=@(^d*10zwg^-^(ac)bcqceto6x^)=(k5y_y$0qql+n'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["api", "localhost"]
 
 
 # Application definition

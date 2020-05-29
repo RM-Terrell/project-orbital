@@ -1,13 +1,15 @@
-version: '3'
+version: "3.2"
 
 services:
-  django:
+  api:
     build: ./api
     command: ["python", "manage.py", "runserver", "0.0.0.0:8000"]
     volumes:
       - ./api:/app/api
     ports:
       - "8000:8000"
+    stdin_open: true
+    tty: true
   frontend:
     build: ./frontend
     command: ["npm", "start"]
@@ -16,6 +18,8 @@ services:
       - node-modules:/app/frontend/node_modules
     ports:
       - "3000:3000"
+    depends_on:
+      - api
 
 volumes:
   node-modules:
