@@ -1,55 +1,34 @@
 {
-  "name": "project-orbital",
+  "name": "frontend",
   "version": "0.1.0",
-  "description": "Productivity and task tracking app",
-  "main": "main.js",
-  "scripts": {
-    "test": "jest",
-    "start": "./node_modules/.bin/webpack --config webpack.config.js",
-    "watch": "npm run start -- --watch"
-  },
-  "proxy": "http://api:8000",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/RM-Terrell/project-orbital.git"
-  },
-  "author": "RM-Terrell",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/RM-Terrell/project-orbital/issues"
-  },
-  "homepage": "https://github.com/RM-Terrell/project-orbital#readme",
-  "devDependencies": {
-    "@babel/cli": "^7.0.0",
-    "@babel/core": "^7.3.4",
-    "@babel/preset-env": "^7.3.4",
-    "@babel/preset-es2015": "^7.0.0-beta.53",
-    "@babel/preset-react": "^7.0.0",
-    "@babel/register": "^7.0.0",
-    "@types/jest": "^24.0.11",
-    "babel-loader": "^8.0.0-beta.0",
-    "clean-webpack-plugin": "^2.0.2",
-    "css-loader": "^2.1.1",
-    "enzyme": "^3.9.0",
-    "enzyme-adapter-react-16": "^1.13.0",
-    "eslint": "^5.15.3",
-    "eslint-config-airbnb": "^17.1.0",
-    "eslint-plugin-import": "^2.16.0",
-    "eslint-plugin-jsx-a11y": "^6.2.1",
-    "eslint-plugin-react": "^7.12.4",
-    "extract-text-webpack-plugin": "^4.0.0-beta.0",
-    "jest": "^24.5.0",
-    "node-sass": "^4.12.0",
-    "sass-loader": "^7.1.0",
-    "style-loader": "^0.23.1",
-    "webpack": "^4.29.6",
-    "webpack-bundle-tracker": "^0.4.2-beta",
-    "webpack-cli": "^3.2.3"
-  },
+  "private": true,
   "dependencies": {
-    "prop-types": "^15.7.2",
-    "react": "^16.8.4",
-    "react-dom": "^16.8.4",
-    "react-router-dom": "^5.2.0"
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.5.0",
+    "@testing-library/user-event": "^7.2.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "3.4.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
