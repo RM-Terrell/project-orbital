@@ -23,5 +23,4 @@ The repo has now been reborn as a Django, React app that does the same original 
 - Webpack
 - CSS Grid
 - Eslint
-- SASS
 - Docker
