@@ -2,8 +2,8 @@ FROM python:3.8
 
 WORKDIR /app/backend
 
-COPY requirements.txt /app/backend/
-RUN pip install -r requirements.txt
+COPY requirements/prod.txt /app/backend/requirements/
+RUN pip install -r requirements/prod.txt
 
 COPY . /app/backend/
 
