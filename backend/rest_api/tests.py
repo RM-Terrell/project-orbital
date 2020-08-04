@@ -2,7 +2,7 @@ from django.test import TestCase
 from django.urls import reverse
 
 
-class SemToSdTest(TestCase):
+class SemToSdTests(TestCase):
     """
     Unit tests around the endpoint for converting SEM to SD
     TODO mock out the actual math function onces they are integrated into the REST API view

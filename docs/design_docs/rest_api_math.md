@@ -6,8 +6,12 @@ Perform mathematical conversions around various types of statistics. Do this via
 ## Conventions
 Code should be as modular and expandable as possible, and as clear as possible even at the cost of having a few extra lines of code. Lets not make statistics any harder than they need to be. Doc strings for every class and function.
 
-### Test Coverage
-100%. No exceptions. TDD preferred, but must be at least committed simultaneously.
+### Testing
+100% coverage of math functions and REST API views. No exceptions. TDD preferred, but must be at least committed simultaneously or the goat gets mad. He's really hard to calm down once mad.
+
+Test mathematics results out to 4 decimal places. `assertAlmostEqual()` is great for this, and takes an arg for decimals.
+
+For assert comparison statements, follow convention of `assert(expected, actual)` in that order. Not `assert(actual, expected)`. No real reason for that order other than to be consistent with a style.
 
 ## General Design
 
@@ -29,3 +33,7 @@ Every response contains a `provided_arguments` field, listing the arguments the 
 Every response contains a `calculation_results` field listing the results of the calculation as a dictionary. Calculations may return one number, or many.
 
 Every response contains a `warnings` field containing any warnings (like the divide by zero example) as a list of strings.
+
+### Code locations
+
+Actual mathematics will live in their own functions / methods in their own files. They will then be imported into the REST API views and ran, keeping them separate and modular. Opens possibility for math being done with other modules / languages / systems and swapping them with (relative) ease.

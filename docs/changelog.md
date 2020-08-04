@@ -4,7 +4,6 @@
 ### Changed
 - Started rebuild of app around CRA
 
-
 ## May 27th 2020
 ### Changed
 - Reorganized app to have specific frontend / backend directories with the intent of dockerizing them

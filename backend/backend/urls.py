@@ -15,9 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from rest_api import views
+
+from rest_api.views import SemToSd
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('rest_api/sem_to_sd/', views.SemToSd.as_view(), name='sem_to_sd'),
+    path('rest_api/sem_to_sd/', SemToSd.as_view(), name='sem_to_sd'),
 ]
