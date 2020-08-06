@@ -19,7 +19,6 @@ export default class SemSD extends React.Component {
   async handleSubmit(event) {
     // alert('A name was submitted: ' + this.state.value);
     event.preventDefault();
-    console.log(this.state);
     try {
       const res = await fetch('http://127.0.0.1:8000/rest_api/sem_to_sd/', {
         method: 'POST',
@@ -32,8 +31,10 @@ export default class SemSD extends React.Component {
           n_value: this.state[`${this.nValue}`],
         }),
       });
-      console.log(res);
+      const body = await res.json();
+      console.log(body);
     } catch (error) {
+      // eslint-disable-next-line no-console
       console.log(error);
     }
 
