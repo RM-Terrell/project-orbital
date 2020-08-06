@@ -28,6 +28,9 @@
             "error",
             2
         ],
+        "react/jsx-max-props-per-line": "off",
+        "react/jsx-first-prop-new-line": "off",
+        "react/destructuring-assignment": "off",
         "linebreak-style":"off",
         "indent": [
             "error",
