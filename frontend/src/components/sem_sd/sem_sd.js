@@ -17,7 +17,6 @@ export default class SemSD extends React.Component {
   }
 
   async handleSubmit(event) {
-    // alert('A name was submitted: ' + this.state.value);
     event.preventDefault();
     try {
       const res = await fetch('http://127.0.0.1:8000/rest_api/sem_to_sd/', {
@@ -32,12 +31,11 @@ export default class SemSD extends React.Component {
         }),
       });
       const body = await res.json();
-      console.log(body);
+      console.log(body.sd_result);
     } catch (error) {
       // eslint-disable-next-line no-console
       console.log(error);
     }
-
   }
 
   render() {
@@ -49,7 +47,7 @@ export default class SemSD extends React.Component {
         <input required="True" placeholder="SEM Value" id="sem-value-input"
           value={this.state.value} onChange={this.handleChange} name={this.semValue}
         />
-        <output id="sem-sd-output" />
+        <output id="sd-output" />
         <button className="btn" type="submit" onClick={this.handleSubmit}>SEM to SD</button>
       </div>
     );
