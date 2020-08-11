@@ -12,6 +12,7 @@ class SemToSdTests(TestCase):
         Given a SEM of 2, and an N of 5,
         verify that the conversion to SD is 4.4721
         """
+        print('sem test 1')
         expected_sd = 4.4721
         sem_value = 2
         n_value = 5
