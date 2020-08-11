@@ -31,7 +31,7 @@ export default class SemSD extends React.Component {
         }),
       });
       const body = await res.json();
-      console.log(body.sd_result);
+      console.log(body);
     } catch (error) {
       // eslint-disable-next-line no-console
       console.log(error);

@@ -12,11 +12,29 @@ python manage.py runserver
 npm start
 ```
 
-## To run tests
+## To run Python tests
 
 ```console
 python manage.py test
 ```
+
+## To run JavaScript tests
+
+```console
+npm test
+```
+
+## PYTHONPATH
+For a virtualenv you may need to set the python path to something like this in order for the python code to run:
+
+```txt
+cd ~/Path/to/your/code/project-orbital/backend/
+_OLD_PYTHONPATH="$PYTHONPATH"
+PYTHONPATH=$PYTHONPATH:~/Path/to/your/code/project-orbital/backend/
+export PYTHONPATH
+```
+
+Make sure to change slash direction and such depending on platform of the virtualenv. This example is from a mac.
 
 ## Other notes
 

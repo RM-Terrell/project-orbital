@@ -34,7 +34,7 @@ class SemToSd(APIView):
         data = json.loads(request.body)
         sem = data.get('sem')
         n_value = data.get('n_value')
-        result = sem_to_sd(int(sem), int(n_value))
+        result = sem_to_sd(float(sem), int(n_value))
         data = {
             "sd_result": result
         }

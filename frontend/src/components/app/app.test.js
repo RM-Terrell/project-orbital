@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import Navbar from 'react-bootstrap/Navbar';
 import App from './app';
 
-it('renders without crashing', () => {
+it('renders', () => {
   shallow(<App />);
 });
 
