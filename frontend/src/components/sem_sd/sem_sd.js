@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './sem_sd.css';
+
 export default class SemSD extends React.Component {
   constructor(props) {
     super(props);
@@ -31,7 +33,9 @@ export default class SemSD extends React.Component {
         }),
       });
       const body = await res.json();
-      console.log(body);
+      this.setState({
+        output_value: body.sd_result,
+      });
     } catch (error) {
       // eslint-disable-next-line no-console
       console.log(error);
@@ -47,8 +51,8 @@ export default class SemSD extends React.Component {
         <input required="True" placeholder="SEM Value" id="sem-value-input"
           value={this.state.value} onChange={this.handleChange} name={this.semValue}
         />
-        <output id="sd-output" />
         <button className="btn" type="submit" onClick={this.handleSubmit}>SEM to SD</button>
+        <output id="sd-output">{this.state.output_value}</output>
       </div>
     );
   }
