@@ -1,14 +1,17 @@
+FROM node:13.12.0-alpine
 
-FROM node
+WORKDIR /app
 
-WORKDIR /app/frontend
-COPY package.json /app/frontend
-COPY package-lock.json /app/frontend
+ENV PATH /app/node_modules/.bin:$PATH
 
-RUN npm install
+COPY package.json package-lock.json ./
 
-COPY . /app/frontend/
+RUN npm install --production && \
+    npm install react-scripts@3.4.1 -g && \
+    npm install serv
 
-EXPOSE 3000
+COPY . ./
 
-CMD ["npm", "start"]
+RUN npm run build
+
+CMD ["serve", "-s", "build", "-l", "3000"]

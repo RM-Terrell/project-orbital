@@ -1,7 +1,16 @@
 # Orbital Changelog
 
-# April 27th 2020
-## Reduced and refined the scope of the project by removing the unfinished calculator, pom, and note taker
+## June 1st 2020
+### Changed
+- Started rebuild of app around CRA
+
+## May 27th 2020
+### Changed
+- Reorganized app to have specific frontend / backend directories with the intent of dockerizing them
+
+## April 27th 2020
+### Changed
+- Reduced and refined the scope of the project by removing the unfinished calculator, pom, and note taker
 
 ## May 30th 2019
 ### Added
