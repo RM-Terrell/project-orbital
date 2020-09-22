@@ -40,3 +40,75 @@ class SemToSd(APIView):
         }
 
         return Response(data=data, status=status.HTTP_200_OK)
+
+
+class CiToSd(APIView):
+    """
+    TODO
+    """
+    def get(self, request, format=None):
+        """
+        Gets descritpions / help information for the conversion
+
+        :param request request:
+        :return Response:
+        """
+        data = {
+            "description": "Convert Confidence Interval, to Standard Deviation",
+        }
+
+        return Response(data=data, status=status.HTTP_200_OK)
+
+    def put(self, request, format=None):
+        """
+        TODO
+        """
+        data = json.loads(request.body)
+
+
+class MultipointMeanSD(APIView):
+    """
+    TODO
+    """
+    def get(self, request, format=None):
+        """
+        Gets descritpions / help information for the conversion
+
+        :param request request:
+        :return Response:
+        """
+        data = {
+            "description": "Convert many individual data points, to Standard Deviation",
+        }
+
+        return Response(data=data, status=status.HTTP_200_OK)
+
+    def put(self, request, format=None):
+        """
+        TODO
+        """
+        data = json.loads(request.body)
+
+
+class NPercent(APIView):
+    """
+    TODO
+    """
+    def get(self, request, format=None):
+        """
+        Gets descritpions / help information for the conversion
+
+        :param request request:
+        :return Response:
+        """
+        data = {
+            "description": "Convert n values to percentages",
+        }
+
+        return Response(data=data, status=status.HTTP_200_OK)
+
+    def put(self, request, format=None):
+        """
+        TODO
+        """
+        data = json.loads(request.body)
