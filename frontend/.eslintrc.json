@@ -23,6 +23,7 @@
         "react"
     ],
     "rules": {
+        "prefer-destructuring": "off",
         "react/jsx-filename-extension": "off",
         "react/jsx-indent": [
             "error",

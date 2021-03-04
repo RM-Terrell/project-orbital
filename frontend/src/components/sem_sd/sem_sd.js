@@ -1,11 +1,13 @@
 import React from 'react';
 
 import './sem_sd.css';
+import StatsRequests from '../../modules/StatsRequests';
 
 export default class SemSD extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+    };
 
     // names of input fields for reuse
     this.nValue = 'n_value';
@@ -20,26 +22,13 @@ export default class SemSD extends React.Component {
 
   async handleSubmit(event) {
     event.preventDefault();
-    try {
-      const res = await fetch('http://127.0.0.1:8000/rest_api/sem_to_sd/', {
-        method: 'POST',
-        headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          sem: this.state[`${this.semValue}`],
-          n_value: this.state[`${this.nValue}`],
-        }),
-      });
-      const body = await res.json();
-      this.setState({
-        output_value: body.sd_result,
-      });
-    } catch (error) {
-      // eslint-disable-next-line no-console
-      console.log(error);
-    }
+    const statsRequests = new StatsRequests();
+    const semValue = this.state[`${this.semValue}`];
+    const nValue = this.state[`${this.nValue}`];
+    const body = await statsRequests.semSdPost(semValue, nValue);
+    this.setState({
+      output_value: body.sd_result,
+    });
   }
 
   render() {
