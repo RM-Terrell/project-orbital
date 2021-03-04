@@ -1,16 +1,18 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom';
+
 import SemSD from './sem_sd';
 
+jest.mock('/statsRequests');
+let statsRequests = jest.fn();
+statsRequests.prototype.semdSDRequest = {};
+
+
 test('The SemSD component renders without error and has a button for submitting', () => {
-  const wrapper = shallow(<SemSD />);
-  expect(wrapper.find('button')).toHaveLength(1);
+  render(<SemSD />);
+
 });
 
-// todo finish
 // test('The SemSD submit button is clickable', () => {
-//   const mockCallBack = jest.fn();
-//   const wrapper = shallow(<SemSD />);
-//   wrapper.find('button').simulate('click');
-//   expect(mockCallBack.mock.calls.length).toEqual(1);
 // });
