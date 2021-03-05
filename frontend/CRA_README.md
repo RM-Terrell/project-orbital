@@ -17,6 +17,19 @@ You will also see any lint errors in the console.
 Launches the test runner in the interactive watch mode.<br />
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
+If youre using the jest test runner extension to vscode and getting errors about
+
+```console
+Cannot find module
+```
+
+followed by some path info, you may need to set your local work space setting `jestRunner: Project Path" to be the path on your system to the frontend directory.
+Something like
+
+```console
+/home/user_name/some_folders/project-orbital/frontend/
+```
+
 ### `npm run build`
 
 Builds the app for production to the `build` folder.<br />
