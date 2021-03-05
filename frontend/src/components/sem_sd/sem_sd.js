@@ -26,6 +26,7 @@ export default class SemSD extends React.Component {
     const semValue = this.state[`${this.semValue}`];
     const nValue = this.state[`${this.nValue}`];
     const body = await statsRequests.semSdPost(semValue, nValue);
+    // todo error handling for no body returned
     this.setState({
       output_value: body.sd_result,
     });
@@ -41,7 +42,7 @@ export default class SemSD extends React.Component {
           value={this.state.value} onChange={this.handleChange} name={this.semValue}
         />
         <button className="btn" type="submit" onClick={this.handleSubmit}>SEM to SD</button>
-        <output id="sd-output">{this.state.output_value}</output>
+        <div id="sd-output" title="SEM SD Output">{this.state.output_value}</div>
       </div>
     );
   }
