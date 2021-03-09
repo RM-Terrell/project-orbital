@@ -4,10 +4,10 @@ import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Switch, Route, Link } from 'react-router-dom';
 
-import SemSD from '../sem_sd/sem_sd';
-import CiSD from '../ci_sd/ci_sd';
-import MultipointMeanSD from '../multipoint_m_sd/multipoint_m_sd';
-import NToPercent from '../n_percent/n_percent';
+import SemSD from '../sem_sd/SemSd';
+import CiSD from '../ci_sd/CiSd';
+import MultipointMeanSD from '../multipoint_m_sd/MultipointMeanSd';
+import NToPercent from '../n_percent/NPercent';
 import Home from '../home/home';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
