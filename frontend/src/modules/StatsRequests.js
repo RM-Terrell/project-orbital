@@ -6,8 +6,15 @@ export default class StatsRequests {
     this.semToSdURL = 'http://127.0.0.1:8000/rest_api/sem_to_sd/';
   }
 
+  /**
+   * Method to check for an error in the response
+   * @param {response} response
+   * @returns {(JSON|false)}
+   */
   static async returnResponse(response) {
     if (!response.ok) {
+      // eslint-disable-next-line no-console
+      console.error(response.statusText);
       return false;
     }
     const body = await response.json();
@@ -20,7 +27,7 @@ export default class StatsRequests {
    * @param {number} nValue
    * @returns {(JSON|false)}
    */
-  async semSdPost(semValue, nValue) {
+  async semToSdConvert(semValue, nValue) {
     const response = await fetch(this.semToSdURL, {
       method: 'POST',
       headers: {

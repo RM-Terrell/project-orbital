@@ -7,11 +7,12 @@ export default class SemSD extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      output_value: '',
     };
 
     // names of input fields for reuse
     this.nValue = 'n_value';
-    this.semValue = 'semValue';
+    this.semValue = 'sem_value';
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -25,10 +26,18 @@ export default class SemSD extends React.Component {
     const statsRequests = new StatsRequests();
     const semValue = this.state[`${this.semValue}`];
     const nValue = this.state[`${this.nValue}`];
-    const body = await statsRequests.semSdPost(semValue, nValue);
+    const body = await statsRequests.semToSdConvert(semValue, nValue);
     // todo error handling for no body returned
+    let outputValue;
+    if (!body) {
+      const errorMessage = 'No response returned by the server';
+      outputValue = errorMessage;
+      console.error(errorMessage);
+    } else {
+      outputValue = body.sd_result;
+    }
     this.setState({
-      output_value: body.sd_result,
+      output_value: outputValue,
     });
   }
 
