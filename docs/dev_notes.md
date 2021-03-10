@@ -38,4 +38,4 @@ Make sure to change slash direction and such depending on platform of the virtua
 
 ## Other notes
 
-Consult Dockerfiles and docker-compose file for any other commands needed for running.
+Consult Dockerfiles and docker-compose file for any other commands needed for running things like the backend server.

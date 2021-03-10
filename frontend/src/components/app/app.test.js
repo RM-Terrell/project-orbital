@@ -1,16 +1,15 @@
 import React from 'react';
-import Navbar from 'react-bootstrap/Navbar';
+import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom';
+
+import { BrowserRouter } from 'react-router-dom';
 import App from './app';
 
-// it('renders', () => {
-//   shallow(<App />);
-// });
-
-// it('renders a Navbar', () => {
-//   const wrapper = shallow(<App />);
-//   expect(wrapper.find(Navbar)).toHaveLength(1);
-// });
-
-test('should ', async () => {
-  console.log('placeholder');
+test(`Given the main app component is rendered, verify that the single and
+mulitpoint conversions elements are displayed.`, async () => {
+  render(<BrowserRouter><App /></BrowserRouter>);
+  screen.debug();
+  expect(screen.queryByText('Single Point Conversions')).toBeInTheDocument();
+  expect(screen.queryByText('Multi Point Conversions')).toBeInTheDocument();
+  expect(screen.queryByText('Project Orbital')).toBeInTheDocument();
 });

@@ -14,7 +14,7 @@ test(`Given the SEM to SD component is rendered, verify that it renders two inpu
 and a button for submitting the inputs.`, () => {
   render(<SemSD />);
 
-  expect(screen.queryByText('SEM to SD', { selector: 'button' })).toBeInTheDocument();
+  expect(screen.queryByText('Convert', { selector: 'button' })).toBeInTheDocument();
   expect(screen.queryByPlaceholderText('N Value')).toBeInTheDocument();
   expect(screen.queryByPlaceholderText('SEM Value')).toBeInTheDocument();
   expect(screen.queryByTitle('SEM SD Output')).toBeInTheDocument();
@@ -45,10 +45,10 @@ button is clicked, verify that the method for handling its REST call is called w
   fireEvent.change(nValueInput, { target: { value: nValue } });
   fireEvent.change(semValueInput, { target: { value: semValue } });
 
-  fireEvent.click(screen.queryByText('SEM to SD', { selector: 'button' }));
+  fireEvent.click(screen.queryByText('Convert', { selector: 'button' }));
   await screen.findByText('2');
-  // expect(semSdPost).toBeCalledTimes(1);
-  // expect(semSdPost).toHaveBeenCalledWith(semValue, nValue);
+  expect(semToSdConvert).toBeCalledTimes(1);
+  expect(semToSdConvert).toHaveBeenCalledWith(semValue, nValue);
 });
 
 test(`Given the SEM to SD component is rendered, has values input in its input fields and its submit
@@ -66,7 +66,7 @@ and an error is presented to the user in the output field.`, async () => {
   fireEvent.change(nValueInput, { target: { value: nValue } });
   fireEvent.change(semValueInput, { target: { value: semValue } });
 
-  fireEvent.click(screen.queryByText('SEM to SD', { selector: 'button' }));
+  fireEvent.click(screen.queryByText('Convert', { selector: 'button' }));
   await screen.findByText(errorMessage);
   // eslint-disable-next-line no-console
   expect(console.error).toBeCalledWith(errorMessage);

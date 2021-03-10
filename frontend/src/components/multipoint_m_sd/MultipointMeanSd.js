@@ -1,19 +1,27 @@
 import React from 'react';
 
+import StatsRequests from '../../modules/StatsRequests';
 
 export default class MultipointMeanSD extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      multipointValue: '',
+    };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleSubmit() {
-    this.inputValues = document.querySelector('input#multipoint-input').value;
-    this.inputValues = this.inputValues.split(',');
-    // TODO tie this into REST API, used to be a JS calculation
-    const meanSDResultsObject = 42;
-    document.querySelector('output#multipoint-total-mean').value = meanSDResultsObject.totalMean;
-    document.querySelector('output#multipoint-total-sd').value = meanSDResultsObject.totalSD;
+  async handleSubmit(event) {
+    event.preventDefault();
+    const statsRequests = new StatsRequests();
+    const multipointValue = this.state.multipointValue;
+    await statsRequests.semToSdConvert(multipointValue);
+
+    // this.inputValues = document.querySelector('input#multipoint-input').value;
+    // this.inputValues = this.inputValues.split(',');
+
+    // document.querySelector('output#multipoint-total-mean').value = meanSDResultsObject.totalMean;
+    // document.querySelector('output#multipoint-total-sd').value = meanSDResultsObject.totalSD;
   }
 
   render() {

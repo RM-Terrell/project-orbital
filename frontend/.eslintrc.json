@@ -4,6 +4,7 @@
         "es6": true,
         "jest": true
     },
+    "parser": "babel-eslint",
     "extends": [
         "plugin:react/recommended",
         "airbnb"
@@ -38,6 +39,7 @@
             2,
             { "MemberExpression": 1 }
         ],
+        "object-shorthand":"off",
         "max-len":[
             "error",
             { "code": 119 }

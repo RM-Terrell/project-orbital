@@ -3,16 +3,21 @@ import React from 'react';
 export default class NToPercent extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      outputValue: '',
+    };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleSubmit() {
-    this.givenN = document.querySelector('input#given-n-value').value;
-    this.totalN = document.querySelector('input#total-n-value').value;
-    // TODO tie this into REST API, used to be a JS calculation
-    const resultObject = 42;
-    document.querySelector('output#result-given-perc-value').value = resultObject.givenPerc;
-    document.querySelector('output#result-other-perc-value').value = resultObject.otherPerc;
+    // eslint-disable-next-line no-console
+    console.log(this.state.outputValue);
+    // this.givenN = document.querySelector('input#given-n-value').value;
+    // this.totalN = document.querySelector('input#total-n-value').value;
+
+    // const resultObject = 42;
+    // document.querySelector('output#result-given-perc-value').value = resultObject.givenPerc;
+    // document.querySelector('output#result-other-perc-value').value = resultObject.otherPerc;
   }
 
   render() {

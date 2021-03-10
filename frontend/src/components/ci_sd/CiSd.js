@@ -1,43 +1,76 @@
 import React from 'react';
 
+import StatsRequests from '../../modules/StatsRequests';
+import CiPercent from './CiPercent';
+
 export default class CiSD extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      outputValue: '',
+      lowerBound: '',
+      upperBound: '',
+      nValue: '',
+      ciPercent: '95',
+
+    };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleSubmit() {
-    this.upperBound = document.querySelector('input#upper-bound-input').value;
-    this.lowerBound = document.querySelector('input#lower-bound-input').value;
-    this.nValue = document.querySelector('input#n-value-ci-input').value;
-    const ciPercElement = document.querySelector('select#ci-percent-input');
-    this.ciPercent = ciPercElement.options[ciPercElement.selectedIndex].value;
-    // TODO tie this into REST API, used to be a JS calculation
-    const result = 42;
-    if (Number.isFinite(result)) {
-      document.querySelector('output#sd-ci-output').value = result;
-      // TODO TEST THIS CLEARING BEHAVIOR
-      document.querySelector('div#ci-to-sd-container div#ci-sd-error-messages').innerHTML = '';
-    } else {
-      document.querySelector('div#ci-to-sd-container div#ci-sd-error-messages').innerHTML = result;
-    }
+  handleLowerBoundChange = (event) => {
+    this.setState({ lowerBound: event.target.value });
   }
+
+  handleUpperBoundChange = (event) => {
+    this.setState({ upperBound: event.target.value });
+  }
+
+  handleNValueChange = (event) => {
+    this.setState({ nValue: event.target.value });
+  }
+
+  handleCiPercentChange = (event) => {
+    this.setState({ ciPercent: event.target.value });
+  }
+
+  async handleSubmit(event) {
+    event.preventDefault();
+    const statsRequests = new StatsRequests();
+    const semValue = this.state.semValue;
+    const nValue = this.state.nValue;
+    let outputValue;
+    // todo update to new method
+    const body = await statsRequests.semToSdConvert(semValue, nValue);
+
+    if (!body) {
+      const errorMessage = 'No response returned by the server';
+      outputValue = errorMessage;
+      // eslint-disable-next-line no-console
+      console.error(errorMessage);
+    } else {
+      outputValue = body.sd_result;
+    }
+    this.setState({
+      outputValue: outputValue,
+    });
+  }
+
 
   render() {
     return (
       <div id="ci-to-sd-container" className="stats-component-container">
-        <input required="True" placeholder="Upper Bound" id="upper-bound-input" />
-        <input required="True" placeholder="Lower Bound" id="lower-bound-input" />
-        <input required="True" placeholder="N Value" id="n-value-ci-input" />
-        <select required="True" id="ci-percent-input" defaultValue="95">
-          <option value="90">90</option>
-          <option value="95">95</option>
-          <option value="98">98</option>
-          <option value="99">99</option>
-        </select>
-        <output id="sd-ci-output" />
-        <button className="btn" type="submit" onClick={this.handleSubmit}>CI Button</button>
-        <div id="ci-sd-error-messages" className="stats-error-messages" />
+        <input required="True" placeholder="Upper Bound" value={this.state.upperBound}
+          onChange={this.handleUpperBoundChange}
+        />
+        <input required="True" placeholder="Lower Bound" value={this.state.lowerBound}
+          onChange={this.handleLowerBoundChange}
+        />
+        <input required="True" placeholder="N Value" value={this.state.nValue}
+          onChange={this.handleNValueChange}
+        />
+        <CiPercent handleChange={this.handleCiPercentChange} percentValue={this.state.ciPercent} />
+        <button className="btn" type="submit" onClick={this.handleSubmit}>Convert</button>
+        <div title="CI to SD Output">{this.state.outputValue}</div>
       </div>
     );
   }

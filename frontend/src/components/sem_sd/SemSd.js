@@ -7,51 +7,54 @@ export default class SemSD extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      output_value: '',
+      outputValue: '',
+      semValue: '',
+      nValue: '',
     };
 
-    // names of input fields for reuse
-    this.nValue = 'n_value';
-    this.semValue = 'sem_value';
-    this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange(event) {
-    this.setState({ [event.target.name]: event.target.value });
+  handleNChange = (event) => {
+    this.setState({ nValue: event.target.value });
+  }
+
+  handleSemChange = (event) => {
+    this.setState({ semValue: event.target.value });
   }
 
   async handleSubmit(event) {
     event.preventDefault();
     const statsRequests = new StatsRequests();
-    const semValue = this.state[`${this.semValue}`];
-    const nValue = this.state[`${this.nValue}`];
-    const body = await statsRequests.semToSdConvert(semValue, nValue);
-    // todo error handling for no body returned
+    const semValue = this.state.semValue;
+    const nValue = this.state.nValue;
     let outputValue;
+    const body = await statsRequests.semToSdConvert(semValue, nValue);
+
     if (!body) {
       const errorMessage = 'No response returned by the server';
       outputValue = errorMessage;
+      // eslint-disable-next-line no-console
       console.error(errorMessage);
     } else {
       outputValue = body.sd_result;
     }
     this.setState({
-      output_value: outputValue,
+      outputValue: outputValue,
     });
   }
 
   render() {
     return (
       <div id="sem-to-sd-container" className="stats-component-container">
-        <input required="True" placeholder="N Value" id="n-value-sem-input"
-          value={this.state.value} onChange={this.handleChange} name={this.nValue}
+        <input required="True" placeholder="N Value" value={this.state.nValue}
+          onChange={this.handleNChange}
         />
-        <input required="True" placeholder="SEM Value" id="sem-value-input"
-          value={this.state.value} onChange={this.handleChange} name={this.semValue}
+        <input required="True" placeholder="SEM Value" value={this.state.semValue}
+          onChange={this.handleSemChange}
         />
-        <button className="btn" type="submit" onClick={this.handleSubmit}>SEM to SD</button>
-        <div id="sd-output" title="SEM SD Output">{this.state.output_value}</div>
+        <button className="btn" type="submit" onClick={this.handleSubmit}>Convert</button>
+        <div title="SEM SD Output">{this.state.outputValue}</div>
       </div>
     );
   }
