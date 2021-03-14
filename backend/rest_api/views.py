@@ -5,6 +5,12 @@ from rest_framework.response import Response
 from rest_framework import status
 
 from stats_conversions.mathematics.conversions import sem_to_sd
+from stats_conversions.mathematics.exceptions import (
+    NegativeNumberExcpetion,
+    InvalidCIPercentageException,
+    CIBoundInversionException,
+    NToPercentValueInversionException,
+)
 
 
 class SemToSd(APIView):
@@ -44,7 +50,7 @@ class SemToSd(APIView):
 
 class CiToSd(APIView):
     """
-    TODO
+    Endpoint for Confidence Interval to Standard Deviation REST API calls
     """
     def get(self, request, format=None):
         """
@@ -68,7 +74,7 @@ class CiToSd(APIView):
 
 class MultipointMeanSD(APIView):
     """
-    TODO
+    Endpoint for converting multiple data points to Standard Deviation REST API calls
     """
     def get(self, request, format=None):
         """
@@ -92,7 +98,7 @@ class MultipointMeanSD(APIView):
 
 class NPercent(APIView):
     """
-    TODO
+    Endpoint for converting n values to percentage REST API calls
     """
     def get(self, request, format=None):
         """

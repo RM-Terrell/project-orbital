@@ -41,4 +41,11 @@ export default class StatsRequests {
     });
     return StatsRequests.returnResponse(response);
   }
+
+  /**
+   *
+   */
+  async ciToSdConvert() {
+
+  };
 }

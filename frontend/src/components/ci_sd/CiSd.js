@@ -39,8 +39,8 @@ export default class CiSD extends React.Component {
     const semValue = this.state.semValue;
     const nValue = this.state.nValue;
     let outputValue;
-    // todo update to new method
-    const body = await statsRequests.semToSdConvert(semValue, nValue);
+
+    const body = await statsRequests.ciToSdConvert();
 
     if (!body) {
       const errorMessage = 'No response returned by the server';
