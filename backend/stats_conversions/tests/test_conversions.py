@@ -159,8 +159,8 @@ class MultipointMeanSdTests(TestCase):
         expected_sd_result = .5
         result = multipoint_mean_sd(values)
 
-        self.assertEqual(expect_mean_result, result[0])
-        self.assertEqual(expected_sd_result, result[1])
+        self.assertEqual(expect_mean_result, result['mean_result'])
+        self.assertEqual(expected_sd_result, result['sd_result'])
 
     def test_many_round_data_points(self):
         """
@@ -172,8 +172,8 @@ class MultipointMeanSdTests(TestCase):
         expected_sd_result = 2.72029
         result = multipoint_mean_sd(values)
 
-        self.assertEqual(expect_mean_result, result[0])
-        self.assertAlmostEqual(expected_sd_result, result[1], 4)
+        self.assertEqual(expect_mean_result, result['mean_result'])
+        self.assertAlmostEqual(expected_sd_result, result['sd_result'], 4)
 
     def test_many_decimal_data_points(self):
         """
@@ -185,18 +185,19 @@ class MultipointMeanSdTests(TestCase):
         expected_sd_result = 15.36621
         result = multipoint_mean_sd(values)
 
-        self.assertAlmostEqual(expect_mean_result, result[0], 4)
-        self.assertAlmostEqual(expected_sd_result, result[1], 4)
+        self.assertAlmostEqual(expect_mean_result, result['mean_result'], 4)
+        self.assertAlmostEqual(expected_sd_result, result['sd_result'], 4)
 
     def test_no_values(self):
         """
         Given an empty list / array is passed in, verify that the conversions handles this and
-        returns an empty tuple
+        returns an object with no values
         """
         values = []
         result = multipoint_mean_sd(values)
 
-        self.assertEqual(result, ())
+        self.assertEqual('', result['mean_result'])
+        self.assertEqual('', result['sd_result'])
 
 
 class NPrecentTests(TestCase):
@@ -214,8 +215,8 @@ class NPrecentTests(TestCase):
         expected_other_percent = 80
         result = n_percent(given_n, total_n)
 
-        self.assertEqual(expected_given_percent, result[0])
-        self.assertEqual(expected_other_percent, result[1])
+        self.assertEqual(expected_given_percent, result['given_percent'])
+        self.assertEqual(expected_other_percent, result['other_percent'])
 
     def test_round_number_larger(self):
         """
@@ -227,8 +228,8 @@ class NPrecentTests(TestCase):
         expected_other_percent = 57.5
         result = n_percent(given_n, total_n)
 
-        self.assertEqual(expected_given_percent, result[0])
-        self.assertEqual(expected_other_percent, result[1])
+        self.assertEqual(expected_given_percent, result['given_percent'])
+        self.assertEqual(expected_other_percent, result['other_percent'])
 
     def test_decimal_number(self):
         """
@@ -240,8 +241,8 @@ class NPrecentTests(TestCase):
         expected_other_percent = 76.19047
         result = n_percent(given_n, total_n)
 
-        self.assertAlmostEqual(expected_given_percent, result[0], 4)
-        self.assertAlmostEqual(expected_other_percent, result[1], 4)
+        self.assertAlmostEqual(expected_given_percent, result['given_percent'], 4)
+        self.assertAlmostEqual(expected_other_percent, result['other_percent'], 4)
 
     def test_one_negative_number(self):
         """

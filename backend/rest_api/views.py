@@ -4,7 +4,12 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 
-from stats_conversions.mathematics.conversions import sem_to_sd
+from stats_conversions.mathematics.conversions import (
+    sem_to_sd,
+    ci_to_sd,
+    multipoint_mean_sd,
+    n_percent,
+)
 from stats_conversions.mathematics.exceptions import (
     NegativeNumberExcpetion,
     InvalidCIPercentageException,
@@ -37,9 +42,10 @@ class SemToSd(APIView):
         :param request request:
         :return Response:
         """
-        data = json.loads(request.body)
-        sem = data.get('sem')
-        n_value = data.get('n_value')
+        request = json.loads(request.body)
+        sem = request.get('sem')
+        n_value = request.get('n_value')
+
         result = sem_to_sd(float(sem), int(n_value))
         data = {
             "sd_result": result
@@ -65,11 +71,33 @@ class CiToSd(APIView):
 
         return Response(data=data, status=status.HTTP_200_OK)
 
-    def put(self, request, format=None):
+    def post(self, request, format=None):
         """
-        TODO
+        Perform conversion from CI to SD
+
+        :param request request:
+        :return Response:
         """
-        data = json.loads(request.body)
+        request = json.loads(request.body)
+        upper_bound = request.get('upper_bound')
+        lower_bound = request.get('lower_bound')
+        n_value = request.get('n_value')
+        ci_percent = request.get('ci_percent')
+        error_message = ''
+        result = ''
+
+        try:
+            result = ci_to_sd(upper_bound, lower_bound, ci_percent, n_value)
+        except CIBoundInversionException:
+            error_message = 'Invalid bounds. Lower bound must be smaller than the upper bound.'
+        except InvalidCIPercentageException:
+            error_message = 'Invalid confidence interval percentage.'
+        data = {
+            "sd_result": result,
+            'error_message': error_message,
+        }
+
+        return Response(data=data, status=status.HTTP_200_OK)
 
 
 class MultipointMeanSD(APIView):
@@ -89,11 +117,21 @@ class MultipointMeanSD(APIView):
 
         return Response(data=data, status=status.HTTP_200_OK)
 
-    def put(self, request, format=None):
+    def post(self, request, format=None):
         """
-        TODO
+        Perform the conversion of many data points into a mean / sd value
         """
-        data = json.loads(request.body)
+        request = json.loads(request.body)
+        values = request.get('data_points')
+
+        result = multipoint_mean_sd(values)
+
+        data = {
+            'mean_result': result['mean_result'],
+            'sd_result': result['sd_result'],
+        }
+
+        return Response(data=data, status=status.HTTP_200_OK)
 
 
 class NPercent(APIView):
@@ -113,8 +151,29 @@ class NPercent(APIView):
 
         return Response(data=data, status=status.HTTP_200_OK)
 
-    def put(self, request, format=None):
+    def post(self, request, format=None):
         """
-        TODO
+        Perform the conversion of two n values into percents
         """
-        data = json.loads(request.body)
+        request = json.loads(request.body)
+        given_n = request.get('given_n')
+        total_n = request.get('total_n')
+        error_message = ''
+        given_percent = ''
+        other_percent = ''
+
+        try:
+            result = n_percent(given_n, total_n)
+            given_percent = result['given_percent']
+            other_percent = result['other_percent']
+        except NegativeNumberExcpetion:
+            error_message = 'Cannot convert negative numbers.'
+        except NToPercentValueInversionException:
+            error_message = 'Given N value must smaller than the total N.'
+        data = {
+            'given_percent': given_percent,
+            'other_percent': other_percent,
+            'error_message': error_message,
+        }
+
+        return Response(data=data, status=status.HTTP_200_OK)

@@ -60,23 +60,24 @@ def multipoint_mean_sd(points):
     Convert individual data points into a mean/sd value for those points
 
     :param [int|float]:
-    :return (int|float, int|float): (mean, sd)
+    :return {}: an object containing the mean and sd results
     """
     # handle empty array being passed in
     if len(points) == 0:
-        return ()
+        mean_result = ''
+        sd_result = ''
+    else:
+        sum_value = sum(points)
 
-    sum_value = sum(points)
+        mean_result = sum_value / len(points)
 
-    mean_result = sum_value / len(points)
+        sqr_diff = 0
+        for point in points:
+            sqr_diff += pow((point - mean_result), 2)
 
-    sqr_diff = 0
-    for point in points:
-        sqr_diff += pow((point - mean_result), 2)
+        sd_result = math.sqrt(sqr_diff / len(points))
 
-    sd_result = math.sqrt(sqr_diff / len(points))
-
-    return (mean_result, sd_result)
+    return {'mean_result': mean_result, 'sd_result': sd_result}
 
 
 def n_percent(given_n, total_n):
@@ -86,7 +87,7 @@ def n_percent(given_n, total_n):
 
     :param int|float given_n:
     :param int|float total_n:
-    :return (int|float, int|float): (given n percent, other percent)
+    :return {}: an object containing the percent values
     """
 
     if given_n < 0 or total_n < 0:
@@ -97,4 +98,4 @@ def n_percent(given_n, total_n):
     given_perc = given_n / total_n * 100
     other_perc = 100 - given_perc
 
-    return (given_perc, other_perc)
+    return {'given_percent': given_perc, 'other_percent': other_perc}

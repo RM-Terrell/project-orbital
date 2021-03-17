@@ -16,9 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from rest_api.views import SemToSd
+from rest_api.views import SemToSd, CiToSd, NPercent, MultipointMeanSD
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('rest_api/sem_to_sd/', SemToSd.as_view(), name='sem_to_sd'),
+    path('rest_api/ci_to_sd/', CiToSd.as_view(), name='ci_to_sd'),
+    path('rest_api/n_percent/', NPercent.as_view(), name='n_percent'),
+    path('rest_api/multipoint/', MultipointMeanSD.as_view(), name='multipoint'),
 ]

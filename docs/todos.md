@@ -3,6 +3,8 @@ rest api endpoints for all conversions
 
 tests for rest endpoint views
 
+python 3.8 type hinting?
+
 react code for all conversions
 
 tests for all react components
