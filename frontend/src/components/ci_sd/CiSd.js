@@ -12,7 +12,7 @@ export default class CiSD extends React.Component {
       upperBound: '',
       nValue: '',
       ciPercent: '95',
-
+      errorMessage: '',
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -46,14 +46,17 @@ export default class CiSD extends React.Component {
 
     if (!body) {
       const errorMessage = 'No response returned by the server';
-      outputValue = errorMessage;
       // eslint-disable-next-line no-console
       console.error(errorMessage);
+      this.setState({
+        errorMessage: errorMessage,
+      });
     } else {
       outputValue = body.sd_result;
     }
     this.setState({
       outputValue: outputValue,
+      errorMessage: body.error_message,
     });
   }
 
@@ -73,6 +76,7 @@ export default class CiSD extends React.Component {
         <CiPercent handleChange={this.handleCiPercentChange} percentValue={this.state.ciPercent} />
         <button className="btn" type="submit" onClick={this.handleSubmit}>Convert</button>
         <div title="CI to SD Output">{this.state.outputValue}</div>
+        <div>{this.state.errorMessage}</div>
       </div>
     );
   }

@@ -124,7 +124,7 @@ class MultipointMeanSD(APIView):
         request = json.loads(request.body)
         values = request.get('data_points')
 
-        result = multipoint_mean_sd(values)
+        result = multipoint_mean_sd([float(x) for x in values])
 
         data = {
             'mean_result': result['mean_result'],
@@ -163,7 +163,7 @@ class NPercent(APIView):
         other_percent = ''
 
         try:
-            result = n_percent(given_n, total_n)
+            result = n_percent(float(given_n), float(total_n))
             given_percent = result['given_percent']
             other_percent = result['other_percent']
         except NegativeNumberException:
