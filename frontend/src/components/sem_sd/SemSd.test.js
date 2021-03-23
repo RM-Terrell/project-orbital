@@ -28,13 +28,15 @@ fields, verify they update with the correct values.`, async () => {
   const semValueInput = screen.queryByPlaceholderText('SEM Value');
   fireEvent.change(nValueInput, { target: { value: '123' } });
   fireEvent.change(semValueInput, { target: { value: '456' } });
+
   expect(nValueInput.value).toBe('123');
   expect(semValueInput.value).toBe('456');
 });
 
 test(`Given the SEM to SD component is rendered, has values input in its input fields and its submit
 button is clicked, verify that the method for handling its REST call is called with the input values.`, async () => {
-  const mockedReturnValue = { sd_result: 2 };
+  const expectedResult = '517';
+  const mockedReturnValue = { sd_result: expectedResult };
   const nValue = '123';
   const semValue = '456';
   semToSdConvert.mockImplementationOnce(() => mockedReturnValue);
@@ -46,7 +48,8 @@ button is clicked, verify that the method for handling its REST call is called w
   fireEvent.change(semValueInput, { target: { value: semValue } });
 
   fireEvent.click(screen.queryByText('Convert', { selector: 'button' }));
-  await screen.findByText('2');
+  await screen.findByText(expectedResult);
+
   expect(semToSdConvert).toBeCalledTimes(1);
   expect(semToSdConvert).toHaveBeenCalledWith(semValue, nValue);
 });
@@ -59,6 +62,7 @@ and an error is presented to the user in the output field.`, async () => {
   const errorMessage = 'No response returned by the server';
   global.console = { error: jest.fn() };
   semToSdConvert.mockImplementationOnce(() => {});
+
   render(<SemSD />);
 
   const nValueInput = screen.queryByPlaceholderText('N Value');
@@ -68,6 +72,7 @@ and an error is presented to the user in the output field.`, async () => {
 
   fireEvent.click(screen.queryByText('Convert', { selector: 'button' }));
   await screen.findByText(errorMessage);
+
   // eslint-disable-next-line no-console
   expect(console.error).toBeCalledWith(errorMessage);
 });

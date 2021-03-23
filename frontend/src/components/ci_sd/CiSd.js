@@ -36,11 +36,13 @@ export default class CiSD extends React.Component {
   async handleSubmit(event) {
     event.preventDefault();
     const statsRequests = new StatsRequests();
-    const semValue = this.state.semValue;
+    const upperBound = this.state.upperBound;
+    const lowerBound = this.state.lowerBound;
     const nValue = this.state.nValue;
+    const ciPercent = this.state.ciPercent;
     let outputValue;
 
-    const body = await statsRequests.ciToSdConvert();
+    const body = await statsRequests.ciToSdConvert(upperBound, lowerBound, nValue, ciPercent);
 
     if (!body) {
       const errorMessage = 'No response returned by the server';

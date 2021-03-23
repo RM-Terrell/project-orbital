@@ -1,4 +1,4 @@
-class NegativeNumberExcpetion(Exception):
+class NegativeNumberException(Exception):
     """
     Raised when a negative number is detected where one shouldn't be
     """

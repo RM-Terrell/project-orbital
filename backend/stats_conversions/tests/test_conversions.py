@@ -6,7 +6,7 @@ from stats_conversions.mathematics.conversions import (
     multipoint_mean_sd,
     n_percent)
 from stats_conversions.mathematics.exceptions import (
-    NegativeNumberExcpetion,
+    NegativeNumberException,
     CIBoundInversionException,
     InvalidCIPercentageException,
     NToPercentValueInversionException,
@@ -251,7 +251,7 @@ class NPrecentTests(TestCase):
         given_n = -85
         total_n = 200
 
-        with self.assertRaises(NegativeNumberExcpetion):
+        with self.assertRaises(NegativeNumberException):
             n_percent(given_n, total_n)
 
     def test_two_negative_numbers(self):
@@ -261,7 +261,7 @@ class NPrecentTests(TestCase):
         given_n = -85
         total_n = -200
 
-        with self.assertRaises(NegativeNumberExcpetion):
+        with self.assertRaises(NegativeNumberException):
             n_percent(given_n, total_n)
 
     def test_given_n_larger_than_total(self):

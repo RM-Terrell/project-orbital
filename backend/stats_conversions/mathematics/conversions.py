@@ -1,7 +1,7 @@
 import math
 
 from stats_conversions.mathematics.exceptions import (
-    NegativeNumberExcpetion,
+    NegativeNumberException,
     InvalidCIPercentageException,
     CIBoundInversionException,
     NToPercentValueInversionException,
@@ -91,7 +91,7 @@ def n_percent(given_n, total_n):
     """
 
     if given_n < 0 or total_n < 0:
-        raise NegativeNumberExcpetion()
+        raise NegativeNumberException()
     if given_n > total_n:
         raise NToPercentValueInversionException()
 

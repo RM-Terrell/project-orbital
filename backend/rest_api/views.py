@@ -11,7 +11,7 @@ from stats_conversions.mathematics.conversions import (
     n_percent,
 )
 from stats_conversions.mathematics.exceptions import (
-    NegativeNumberExcpetion,
+    NegativeNumberException,
     InvalidCIPercentageException,
     CIBoundInversionException,
     NToPercentValueInversionException,
@@ -24,7 +24,7 @@ class SemToSd(APIView):
     """
     def get(self, request, format=None):
         """
-        Gets descritpions / help information for the conversion
+        Gets descriptions / help information for the conversion
 
         :param request request:
         :return Response:
@@ -60,7 +60,7 @@ class CiToSd(APIView):
     """
     def get(self, request, format=None):
         """
-        Gets descritpions / help information for the conversion
+        Gets descriptions / help information for the conversion
 
         :param request request:
         :return Response:
@@ -87,7 +87,7 @@ class CiToSd(APIView):
         result = ''
 
         try:
-            result = ci_to_sd(upper_bound, lower_bound, ci_percent, n_value)
+            result = ci_to_sd(float(upper_bound), float(lower_bound), int(ci_percent), int(n_value))
         except CIBoundInversionException:
             error_message = 'Invalid bounds. Lower bound must be smaller than the upper bound.'
         except InvalidCIPercentageException:
@@ -106,7 +106,7 @@ class MultipointMeanSD(APIView):
     """
     def get(self, request, format=None):
         """
-        Gets descritpions / help information for the conversion
+        Gets descriptions / help information for the conversion
 
         :param request request:
         :return Response:
@@ -140,7 +140,7 @@ class NPercent(APIView):
     """
     def get(self, request, format=None):
         """
-        Gets descritpions / help information for the conversion
+        Gets descriptions / help information for the conversion
 
         :param request request:
         :return Response:
@@ -166,7 +166,7 @@ class NPercent(APIView):
             result = n_percent(given_n, total_n)
             given_percent = result['given_percent']
             other_percent = result['other_percent']
-        except NegativeNumberExcpetion:
+        except NegativeNumberException:
             error_message = 'Cannot convert negative numbers.'
         except NToPercentValueInversionException:
             error_message = 'Given N value must smaller than the total N.'
