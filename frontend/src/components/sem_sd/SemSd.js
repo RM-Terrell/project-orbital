@@ -1,7 +1,7 @@
 import React from 'react';
 
-import './sem_sd.css';
 import StatsRequests from '../../modules/StatsRequests';
+import { serverErrorMessage } from '../../modules/messaging';
 
 export default class SemSD extends React.Component {
   constructor(props) {
@@ -32,7 +32,7 @@ export default class SemSD extends React.Component {
     const body = await statsRequests.semToSdConvert(semValue, nValue);
 
     if (!body) {
-      const errorMessage = 'No response returned by the server';
+      const errorMessage = serverErrorMessage;
       outputValue = errorMessage;
       // eslint-disable-next-line no-console
       console.error(errorMessage);
@@ -48,13 +48,16 @@ export default class SemSD extends React.Component {
     return (
       <div id="sem-to-sd-container" className="stats-component-container">
         <input required="True" placeholder="N Value" value={this.state.nValue}
-          onChange={this.handleNChange}
+          onChange={this.handleNChange} className="input-field"
         />
         <input required="True" placeholder="SEM Value" value={this.state.semValue}
-          onChange={this.handleSemChange}
+          onChange={this.handleSemChange} className="input-field"
         />
-        <button className="btn" type="submit" onClick={this.handleSubmit}>Convert</button>
-        <div title="SEM SD Output">{this.state.outputValue}</div>
+        <button className="convert-button" type="submit" onClick={this.handleSubmit}>Convert</button>
+        <div title="SEM SD Output" className="output-field">
+          Standard Deviation:
+          <output>{this.state.outputValue}</output>
+        </div>
       </div>
     );
   }

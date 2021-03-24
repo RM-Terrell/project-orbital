@@ -133,7 +133,6 @@ class StatsPage(Base):
 
     def convert_ci_to_sd(self, upper_bound, lower_bound, n, percent):
         """
-        TODO is this actually returning an int or a float? Docstring
         Method to fully encapsulate entering values, and returning results in the tool for
         converting Confidence Intervals to Standard Deviation.
 

@@ -5,7 +5,7 @@ export default function CiPercent(props) {
   return (
     <>
       <select required="True" title="CI Percent Selector" onChange={props.handleChange}
-        value={props.percentValue}
+        value={props.percentValue} className="input-field"
       >
         <option value="90">90</option>
         <option value="95">95</option>

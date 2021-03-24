@@ -77,5 +77,6 @@ class StatsFunctionalityTests(BaseTest):
         except ValueError as e:
             self.fail(e)
 
+
 if __name__ == '__main__':
     unittest.main()

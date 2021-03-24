@@ -38,7 +38,6 @@ export default class StatsRequests {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        // todo string conversion needed?
         sem: semValue,
         n_value: nValue,
       }),

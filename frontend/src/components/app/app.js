@@ -26,13 +26,9 @@ function App() {
                 <NavDropdown.Item as={Link} to="/sem_sd">SEM SD</NavDropdown.Item>
                 <NavDropdown.Item as={Link} to="ci_sd">CI / SD</NavDropdown.Item>
                 <NavDropdown.Item as={Link} to="n_to_percent">N to Percent</NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
               </NavDropdown>
               <NavDropdown title="Multi Point Conversions" id="basic-nav-dropdown">
                 <NavDropdown.Item as={Link} to="multipoint_mean_sd">Points to Mean / SD</NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
               </NavDropdown>
             </Nav>
           </Navbar.Collapse>

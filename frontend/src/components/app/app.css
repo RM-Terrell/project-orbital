@@ -1,0 +1,41 @@
+.convert-button {
+    background-color: #00818f;
+    display: inline-block;
+    margin: 0;
+    padding: .2rem .4rem;
+    border: 0;
+    border-radius: 0.25rem;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.5;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -webkit-font-smoothing: antialiased;
+}
+
+.input-field {
+    margin-right: 1rem;
+}
+
+.stats-component-container {
+    margin: 50px;
+    border: 1px solid black;
+    border-radius: 4px;
+    display: inline-block;
+    padding: 25px;
+}
+
+.conversion-error-message {
+    color: #d4441c;
+}
+
+.output-field {
+    margin-top: 1rem;
+}
+
+.output-field output {
+    margin-left: 1rem;
+}

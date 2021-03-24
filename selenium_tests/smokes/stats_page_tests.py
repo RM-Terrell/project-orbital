@@ -37,5 +37,6 @@ class StatsPageTests(BaseTest):
         observed_stats_componenets = len(self.stats_page.stats_conversion_tools)
         self.assertEqual(expected_stats_components, observed_stats_componenets)
 
+
 if __name__ == '__main__':
     unittest.main()

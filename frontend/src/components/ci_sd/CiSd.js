@@ -2,6 +2,7 @@ import React from 'react';
 
 import StatsRequests from '../../modules/StatsRequests';
 import CiPercent from './CiPercent';
+import { serverErrorMessage } from '../../modules/messaging';
 
 export default class CiSD extends React.Component {
   constructor(props) {
@@ -40,24 +41,22 @@ export default class CiSD extends React.Component {
     const lowerBound = this.state.lowerBound;
     const nValue = this.state.nValue;
     const ciPercent = this.state.ciPercent;
-    let outputValue;
 
     const body = await statsRequests.ciToSdConvert(upperBound, lowerBound, nValue, ciPercent);
 
     if (!body) {
-      const errorMessage = 'No response returned by the server';
+      const errorMessage = serverErrorMessage;
       // eslint-disable-next-line no-console
       console.error(errorMessage);
       this.setState({
         errorMessage: errorMessage,
       });
     } else {
-      outputValue = body.sd_result;
+      this.setState({
+        outputValue: body.sd_result,
+        errorMessage: body.error_message,
+      });
     }
-    this.setState({
-      outputValue: outputValue,
-      errorMessage: body.error_message,
-    });
   }
 
 
@@ -65,18 +64,21 @@ export default class CiSD extends React.Component {
     return (
       <div id="ci-to-sd-container" className="stats-component-container">
         <input required="True" placeholder="Upper Bound" value={this.state.upperBound}
-          onChange={this.handleUpperBoundChange}
+          onChange={this.handleUpperBoundChange} className="input-field"
         />
         <input required="True" placeholder="Lower Bound" value={this.state.lowerBound}
-          onChange={this.handleLowerBoundChange}
+          onChange={this.handleLowerBoundChange} className="input-field"
         />
         <input required="True" placeholder="N Value" value={this.state.nValue}
-          onChange={this.handleNValueChange}
+          onChange={this.handleNValueChange} className="input-field"
         />
         <CiPercent handleChange={this.handleCiPercentChange} percentValue={this.state.ciPercent} />
-        <button className="btn" type="submit" onClick={this.handleSubmit}>Convert</button>
-        <div title="CI to SD Output">{this.state.outputValue}</div>
-        <div>{this.state.errorMessage}</div>
+        <button className="convert-button" type="submit" onClick={this.handleSubmit}>Convert</button>
+        <div title="CI to SD Output" className="output-field">
+          Standard Deviation:
+          <output>{this.state.outputValue}</output>
+        </div>
+        <div className="conversion-error-message">{this.state.errorMessage}</div>
       </div>
     );
   }
