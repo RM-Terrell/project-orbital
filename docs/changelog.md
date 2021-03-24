@@ -1,5 +1,15 @@
 # Orbital Changelog
 
+## March 23rd 2021
+### Added
+- Added many jest / RTL tests
+
+### Changed
+- Completed all react code and REST API request code for all conversions
+
+## Removed
+- Removed outdated selenium tests and selenium in general. Will add Cypress for end to end testing later
+
 ## March 07 2021
 ### Removed
 - Removed enzyme from the project

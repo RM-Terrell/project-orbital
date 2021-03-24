@@ -15,9 +15,8 @@ The repo has now been reborn as a Django, React app that does the same original 
 
 ## Technologies leveraged
 - Django
-- Selenium
-- Nose2
 - Jest
+- React Testing Library
 - React and React Router
 - Babel
 - Webpack
