@@ -36,6 +36,12 @@ export PYTHONPATH
 
 Make sure to change slash direction and such depending on platform of the virtualenv. This example is from a mac.
 
+## Spinning up all the docker containers
+
+```console
+docker-compose up
+```
+
 ## Other notes
 
 Consult Dockerfiles and docker-compose file for any other commands needed for running things like the backend server.
