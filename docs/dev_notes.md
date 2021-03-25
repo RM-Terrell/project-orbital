@@ -39,3 +39,5 @@ Make sure to change slash direction and such depending on platform of the virtua
 ## Other notes
 
 Consult Dockerfiles and docker-compose file for any other commands needed for running things like the backend server.
+
+This app was constructed within an Ubuntu subsystem on Windows 10 and both the frontend and backend running in that linux environment, and the ultimately constructed in a linux based docker container. Issues may pop up when trying to run this natively on windows.

@@ -4,7 +4,7 @@ This project originally began as my very first programming project ever. The com
 
 Thus I made a super basic HTML / CSS / JS page that did the math in a consistent, standardized manner. It eventually grew into a hare brained Electron app because I didn't know any better. This is the origin of the name "Project Orbital".
 
-The repo has now been reborn as a Django, React app that does the same original conversions.
+The repo has now been reborn as a Django, React app that does the same original conversions over REST API calls with a whole lot of unit and integration tests.
 
 ## Features
 - Stats conversions
@@ -14,12 +14,11 @@ The repo has now been reborn as a Django, React app that does the same original 
 - Javascript
 
 ## Technologies leveraged
-- Django
+- Django and Django REST Framework
+- React and React Router
+- Docker
 - Jest
 - React Testing Library
-- React and React Router
 - Babel
 - Webpack
-- CSS Grid
 - Eslint
-- Docker

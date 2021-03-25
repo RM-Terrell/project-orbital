@@ -1,3 +1,4 @@
+// VSCode specific config options
 {
     "typeAcquisition": {
         "include": [

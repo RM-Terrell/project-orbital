@@ -11,8 +11,6 @@ Code should be as modular and expandable as possible, and as clear as possible e
 
 Test mathematics results out to 4 decimal places. `assertAlmostEqual()` is great for this, and takes an arg for decimals.
 
-For assert comparison statements, follow convention of `assert(expected, actual)` in that order. Not `assert(actual, expected)`. No real reason for that order other than to be consistent with a style.
-
 ## General Design
 
 ### REST Call Types
@@ -28,11 +26,6 @@ User sends a call to an endpoint for performing division, and sends in the value
 
 User sends a call to the same division endpoint. Sends in the values for 4 / 0. The system returns a 200 code with a `success` value of `false` and a message describing what went wrong when trying to divide by zero.
 
-Every response contains a `provided_arguments` field, listing the arguments the user provided as a dictionary.
-
-Every response contains a `calculation_results` field listing the results of the calculation as a dictionary. Calculations may return one number, or many.
-
-Every response contains a `warnings` field containing any warnings (like the divide by zero example) as a list of strings.
 
 ### Code locations
 
